@@ -1,0 +1,190 @@
+@import "../../global.scss";
+
+//extend
+
+%presentation-left{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+}
+
+
+%presentation-top-title{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 60%;
+  height: 100%; 
+}
+%h1{
+  height: 100%;
+  width: 60%;
+  font-size: 3vh;
+  color: $rosa;
+  display: flex;
+  align-items: center;
+  font-family: $fontBold;
+}
+%p{
+  margin-left: 2%;
+  width: 70%;
+  font-family: $fontMedio
+}
+%span{
+  height: 2%;
+  background: $rosa;
+  width: 15%;
+}
+
+//classes
+
+.presentation-main {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow:hidden;
+
+}
+.presentation-right {
+  height: 80%;
+margin:3%;
+box-shadow: -6px 10px 10px rgba(0, 0, 0, 0.5);
+img {
+  width: 100%;
+  height: 100%;
+}
+}
+
+
+.presentation-left-title {
+@extend %presentation-left;
+  p {
+    @extend %p;
+
+  }
+
+}
+
+
+.presentation-top-title {
+ @extend %presentation-top-title;
+
+  span {
+    @extend %span;
+
+  }
+  h1 {
+    @extend %h1;
+
+  }
+}
+//second
+.presentation-second-left-title {
+  @extend   %presentation-left;
+
+  p {
+    @extend %p;
+
+  }
+}
+
+.presentation-second-top-title {
+  @extend %presentation-top-title;
+  width:100%;
+
+  span {
+    @extend %span;
+
+  }
+  h1 {
+    @extend %h1;
+
+  }
+}
+@media only screen and (min-width: 600px) and (orientation: landscape) {
+  .presentation-main {
+    flex-direction: row;
+  }
+
+  .presentation-right {
+    width: 50%;
+    height: 100%;
+  }
+
+  %presentation-left{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 50%;
+    height: 100%;
+
+  }
+  %presentation-top-title{
+    display: flex;
+
+    text-align: center;
+    width: 60%;
+    height: 30%;
+  }
+
+  %h1{
+    width: 60%;
+    font-size: 8vh;
+  
+  }
+  .presentation-second-left-title {
+  align-items:flex-end;
+
+  }
+  .presentation-second-top-title {
+  position:relative;
+  left:15%;
+  }
+}
+@media only screen and (min-width:1030px) {
+
+
+  .presentation-main {
+    height: 50vh;
+ 
+  
+  }
+  %h1{
+    height: 100%;
+    width: 40%;
+    font-size: 7vh;
+    color: $rosa;
+    display: flex;
+    align-items: center;
+    font-family: $fontBold;
+  }
+  %p{
+    font-size: 3.5vh;
+
+    margin-left: 2%;
+    width: 70%;
+    font-family: $fontMedio
+  }
+  .presentation-right {
+    width: 40%;
+    height:80%;
+   
+  }
+
+  .presentation-second-left-title,   .presentation-left-title{
+    width: 60%;
+   
+    }
+    %span{
+      height: 5%;
+      background: $rosa;
+      width: 20%;
+    }
+    .presentation-second-top-title {
+      left:25%;
+      }
+}
+

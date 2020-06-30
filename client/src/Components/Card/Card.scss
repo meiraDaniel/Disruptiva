@@ -1,0 +1,98 @@
+@import "../../global.scss";
+
+.card-main {
+  background: $azul;
+  width: 75%;
+  height: 30%;
+  margin: 5%;
+  display: flex;
+  border-radius: 20px;
+  color: white;
+  box-shadow: -10px 10px 20px black;
+}
+.card-left-icon {
+  width: 30%;
+  height: 100%;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 80%;
+  }
+}
+.card-right-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 65%;
+  text-align: center;
+  h2 {
+    font-size: 2vh;
+    font-family: $fontBold;
+  }
+  p {
+    font-family: $fontMedio;
+    font-size: 1.8vh;
+  }
+}
+
+.color_white {
+  color: white;
+}
+.color_red {
+  color: red;
+}
+
+@media only screen and (min-width: 500px) and(max-width:1000px) and (orientation: landscape) {
+  .card-main {
+    background: $azul;
+    width: 75%;
+    height: 60%;
+    margin: 5%;
+    display: flex;
+    border-radius: 20px;
+    color: white;
+  }
+  .card-right-text {
+    h2 {
+      font-size: 1.5em;
+      margin: 0;
+    }
+    p {
+      font-size: 0.7em;
+      margin: 1.5%;
+      width: 80%;
+    }
+  }
+}
+
+@media only screen and (min-width: 1000px)  {
+    .card-main {
+      background: $azul;
+      width: 65%;
+      height: 60%;
+      margin: 5%;
+      display: flex;
+      border-radius: 20px;
+      color: white;
+    }
+    .card-right-text {
+      h2 {
+        font-size: 2em;
+        margin: 0;
+      }
+      p {
+        font-size: 1em;
+        margin: 2%;
+        width: 80%;
+      }
+    }
+    .card-ball{
+        span{
+            font-size:2em;
+        }
+    }
+  }

@@ -1,0 +1,18 @@
+@import "../../global.scss";
+
+.portfolio{
+    height:100vh;
+    background:$rosa;
+   margin-top:20%;
+   margin-bottom:20%;
+
+}
+
+@media only screen and (min-width:1030px) {
+    .portfolio{
+       
+       margin-top:10%;
+       margin-bottom:10%;
+    
+    }
+}
