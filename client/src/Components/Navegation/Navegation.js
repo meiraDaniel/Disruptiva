@@ -12,9 +12,9 @@ export default function Navegation() {
 
         </div>
       <ul className={!flag?"display_none":"navegation"}>
-        <a href="#quemsomos">Quem somos</a>
-        <a href="#quemescreve">Quem escreve</a>
-        <a href="#quemescreve">Portfólio</a>
+        <a onClick={()=> set(false)} href="#quemsomos">Quem somos</a>
+        <a onClick={()=> set(false)} href="#quemescreve">Quem escreve</a>
+        <a onClick={()=> set(false)} href="#quemescreve">Portfólio</a>
       </ul>
       <div onClick={()=> set(!flag)} className={!flag?"hamburguer--menu":"hamburguer--menu-close"}>
         <span></span>

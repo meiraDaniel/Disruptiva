@@ -8,17 +8,12 @@ export default function PresentationSecond({ title, text, photo, id }) {
         <img src={photo} alt="team" />
       </div>
       <div className="presentation-second-left-title">
-        <div className="presentation-second-top-title">
+      <div className="presentation-second-top-title">
           <h1>{title}</h1>
-          <span></span>
-          </div>
-
-          <p>{text}</p>
-
+        </div>
+        <p>{text}</p>
       
       </div>
-      
-      
     </div>
   );
 }

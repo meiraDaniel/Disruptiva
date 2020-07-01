@@ -9,7 +9,7 @@ import useInterval from "react-useinterval";
 import Presentation from "../Components/Presentation/Presentation";
 import PresentationSecond from "../Components/Presentation/PresentationSecond";
 import Portfolio from "../Components/Portfolio/Portfolio";
-import cameraPhoto from "../Images/cameraPhoto.png";
+import cameraPhoto from "../Images/rosinha2.png";
 import Ariane from "../Images/Ariane.png";
 import Icons from "../Components/Icons/Icons";
 import Footer from "../Components/Footer/Footer";
@@ -18,9 +18,9 @@ import "./Home.scss";
 export default function Home() {
   const [currentInd, setCurrentInd] = useState(0);
   const text = [
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam.",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam.",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam.",
+    "Lorem ipsum dolor sit amet.",
+    "Lorem ipsum dolor sit amet.",
+    "Lorem ipsum dolor sit amet.",
   ];
   const nextSlide = () => {
     setCurrentInd((state) => (state + 1) % text.length);

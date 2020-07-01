@@ -20,9 +20,9 @@ export default function Hero() {
     <div className="hero-main">
       <div className="content-left">
         <div className="hero-center-title">
-          <h1>Audiovisual disruptivo</h1>
+          <h1>AUDIOVISUAL DISRUPTIVO</h1>
 
-          <h2>{words[currentInd]}</h2>
+          <h2 className="typing">{words[currentInd]}</h2>
         </div>
         <div className="hero-bottom-icons">
           <a

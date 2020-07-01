@@ -8,8 +8,8 @@
   justify-content: space-between;
 }
 .navegation--left-logo {
-  width: 13%;
-  height: 100%;
+  width: 11%;
+  height: 81%;
   background: purple;
   .logo {
     width: 100%;
@@ -60,7 +60,6 @@
     font-family: $fontBold;
     margin-top: 5%;
   }
-
 }
 .hamburguer--menu {
   width: 20%;
@@ -73,15 +72,15 @@
   cursor: pointer;
   span {
     width: 50%;
-    height: 13%;
+    height: 8%;
     background: $azul;
     margin-top: 5%;
     transition: 0.8s ease;
   }
 }
 
-.hamburguer--menu-close {
-   width: 20%;
+.hamburguer--menu-close{
+  width: 20%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -94,7 +93,7 @@
   }
   span:first-child {
     width: 50%;
-    height: 13%;
+    height: 8%;
     background: white;
     margin-top: 0%;
     position: relative;
@@ -103,7 +102,7 @@
   }
   span:nth-child(2) {
     width: 50%;
-    height: 13%;
+    height: 8%;
     background: white;
     margin-top: 0%;
     transform: rotate(-50deg);
@@ -113,37 +112,50 @@
   }
 }
 
-@media only screen and (min-width: 550px) and (orientation: landscape) and (max-width: 1030px) {
-  .navegation-main {
-    height: 13%;
-  }
+@media only screen and (min-width: 499px) and (max-width: 639px) {
   .navegation--left-logo {
-    width: 8%;
+    width: 9%;
+    height: 90%;
   }
-
   .hamburguer--menu {
-    width: 11%;
-    height: 100%;
-
+    width: 15%;
     span {
-      width: 50%;
-      height: 13%;
-    }
-  }
-
-  .hamburguer--menu-close {
-    width: 11%;
-    height: 100%;
-
-    span:first-child {
-      height: 13%;
-    }
-    span:nth-child(2) {
-      height: 13%;
+      height: 10%;
     }
   }
 }
-@media only screen and (min-width: 1030px) {
+@media only screen and (min-width: 640px) and (max-width: 940px) {
+  .navegation--left-logo {
+    width: 5%;
+    height: 80%;
+  }
+  .hamburguer--menu {
+    width: 10%;
+    span {
+      height: 15%;
+    }}
+
+    .hamburguer--menu-close {
+      span:first-child {
+        height: 13%;
+        width: 30%;
+              background:pink;
+
+      }
+      span:nth-child(2) {
+        width: 30%;
+        height: 13%;
+              background:pink;
+
+      }
+    }
+  
+}
+@media only screen and (min-width: 940px) {
+  .navegation--left-logo {
+    width: 10%;
+    height: 100%;
+  }
     .navegation-main {
     justify-content: flex-start;
     }
@@ -175,11 +187,11 @@
         align-items: center;
          justify-content: flex-start;
         a {
-          width: 15%;
+          width: 20%;
         
           text-decoration: none;
           color: white;
-          font-size: 3.5vh;
+          font-size: 3vh;
           font-family: $fontBold;
           margin-top: 0%;
           margin-left:2%;
@@ -190,5 +202,11 @@
         a:hover {
           color: $amarelo;
         }
-      }
+      } 
+}
+@media only screen and (min-width: 1024px) and (max-width: 1366px) {
+  .navegation--left-logo {
+    width: 10%;
+    height: 80%;
+  }
 }
