@@ -1,18 +1,31 @@
 @import "../../global.scss";
 
-.portfolio{
-    height:100vh;
-    background:$rosa;
-   margin-top:20%;
-   margin-bottom:20%;
-
+.portfolio {
+  height: 100vh;
+  background: $rosa;
+  margin-top: 20%;
+  margin-bottom: 20%;
 }
 
-@media only screen and (min-width:1030px) {
-    .portfolio{
-       
-       margin-top:10%;
-       margin-bottom:10%;
-    
-    }
+.video_player {
+  height: 50%;
+  width: 50%;
+  margin: auto;
+  margin-top: 10rem;
+}
+
+.img-thumbnail {
+  width: 10rem;
+  border-radius: 1rem;
+}
+
+.img-thumbnail:hover {
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 1030px) {
+  .portfolio {
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
 }
