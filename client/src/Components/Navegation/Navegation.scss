@@ -1,20 +1,6 @@
 @import "../../global.scss";
 
-.navegation-main {
-  width: 100%;
-  position: absolute;
-  height: 9%;
-  display: flex;
-  justify-content: space-between;
-}
-.navegation--left-logo {
-  width: 11%;
-  height: 81%;
-  background: purple;
-  .logo {
-    width: 100%;
-  }
-}
+
 .display_none {
   background: $rosa;
   width: 0%;
@@ -113,10 +99,7 @@
 }
 
 @media only screen and (min-width: 499px) and (max-width: 639px) {
-  .navegation--left-logo {
-    width: 9%;
-    height: 90%;
-  }
+  
   .hamburguer--menu {
     width: 15%;
     span {
@@ -125,10 +108,7 @@
   }
 }
 @media only screen and (min-width: 640px) and (max-width: 940px) {
-  .navegation--left-logo {
-    width: 5%;
-    height: 80%;
-  }
+ 
   .hamburguer--menu {
     width: 10%;
     span {
@@ -152,19 +132,7 @@
   
 }
 @media only screen and (min-width: 940px) {
-  .navegation--left-logo {
-    width: 10%;
-    height: 100%;
-  }
-    .navegation-main {
-    justify-content: flex-start;
-    }
-    .navegation-main {
-        height: 8%;
-      }
-      .navegation--left-logo {
-        width: 5%;
-      }
+ 
     
       .hamburguer--menu {
      display:none;
@@ -203,10 +171,4 @@
           color: $amarelo;
         }
       } 
-}
-@media only screen and (min-width: 1024px) and (max-width: 1366px) {
-  .navegation--left-logo {
-    width: 10%;
-    height: 80%;
-  }
 }

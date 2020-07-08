@@ -14,6 +14,7 @@ import Ariane from "../Images/Ariane.png";
 import Icons from "../Components/Icons/Icons";
 import Footer from "../Components/Footer/Footer";
 import "./Home.scss";
+import { Grid } from "@material-ui/core";
 
 export default function Home() {
   const [currentInd, setCurrentInd] = useState(0);
@@ -28,42 +29,81 @@ export default function Home() {
   useInterval(nextSlide, 5000);
 
   return (
-    <div className="home-main">
-      <Navegation />
-      <Hero />
-      <Logo />
+    <Grid container style={{ background: "pink" }}>
+      <Grid container style={{ height: "100vh" }}>
+        <Grid item xs={12} style={{ height: "10%", position: "absolute" }}>
+          <Navegation />
+        </Grid>
+        <Hero />
+        <Grid item xs={12} style={{ background: "purple", height: "20%" }}>
+          <Logo />
+        </Grid>
+      </Grid>
+
+      <Grid
+        container
+        justify="center"
+        style={{  height: "70vh", marginTop: "15%", width:'100%', overflow:'hidden' }}
+      >
+        <Grid
+          item
+          xs={12}
+          md={6}
+          style={{
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <Card
+            title="Diferenciais"
+            text={text[currentInd]}
+            icon={camera}
+            currentInd={currentInd}
+          />
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          md={6}
+          style={{
+            display: "flex",
+                     alignItems: "center",
+          }}
+        >
+          <Card
+            title="Serviços"
+            text={text[currentInd]}
+            icon={price}
+            currentInd={currentInd}
+          />
+        </Grid>
+      </Grid>
+      <Grid container style={{ background: "blue" }}>
+        <Grid item style={{ background: "purple" }}>
+          <PresentationSecond
+            title="Quem escreve?"
+            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo in nibh faucibus purus id sit tortor arcu eu. Quam sed in sed sit in feugiat risus non porta. Nibh nulla at cras in phasellus tincidunt euismod sit. Viverra in sit vestibulum, justo mauris id ultricies proin massa.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo in nibh faucibus purus id sit tortor arcu eu. Quam sed in sed sit in feugiat risus non porta. Nibh nulla at cras in phasellus tincidunt euismod sit. Viverra in sit vestibulum, justo mauris id ultricies proin massa."
+            photo={Ariane}
+            id="quemescreve"
+          />
+        </Grid>
+        <Grid item style={{ background: "purple" }}>
+          <Portfolio />
+        </Grid>
+        <Grid item style={{ background: "purple" }}>
+          <Presentation
+            title="Quem somos?"
+            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo in nibh faucibus purus id sit tortor arcu eu. Quam sed in sed sit in feugiat risus non porta. Nibh nulla at cras in phasellus tincidunt euismod sit. Viverra in sit vestibulum, justo mauris id ultricies proin massa.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo in nibh faucibus purus id sit tortor arcu eu. Quam sed in sed sit in feugiat risus non porta. Nibh nulla at cras in phasellus tincidunt euismod sit. Viverra in sit vestibulum, justo mauris id ultricies proin massa."
+            photo={cameraPhoto}
+            id="quemsomos"
+          />
+        </Grid>
+      </Grid>
+
       <Icons />
-
-      <div className="home--cards">
-        <Card
-          title="Diferenciais"
-          text={text[currentInd]}
-          icon={camera}
-          currentInd={currentInd}
-        />
-        <Card
-          title="Serviços"
-          text={text[currentInd]}
-          icon={price}
-          currentInd={currentInd}
-        />
-      </div>
-      <PresentationSecond
-        title="Quem escreve?"
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo in nibh faucibus purus id sit tortor arcu eu. Quam sed in sed sit in feugiat risus non porta. Nibh nulla at cras in phasellus tincidunt euismod sit. Viverra in sit vestibulum, justo mauris id ultricies proin massa."
-        photo={Ariane}
-        id="quemescreve"
-      />
-            <Portfolio />
-
-      <Presentation
-        title="Quem somos?"
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo in nibh faucibus purus id sit tortor arcu eu. Quam sed in sed sit in feugiat risus non porta. Nibh nulla at cras in phasellus tincidunt euismod sit. Viverra in sit vestibulum, justo mauris id ultricies proin massa."
-        photo={cameraPhoto}
-        id="quemsomos"
-      />
-     
-      <Footer />
-    </div>
+      <Grid container style={{ background: "blue" }}>
+        <Footer />
+      </Grid>
+    </Grid>
   );
 }
