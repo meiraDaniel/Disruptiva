@@ -1,16 +1,53 @@
 @import "../../global.scss";
 
-.icons-main{
-   position:fixed;
-   top:91%;
-   left:83%;
-    height:9vh;
-    width:17%;
+.disableBackground {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  opacity: 0.5;
+}
 
-    img{
-        height:100%;
-        width:40%;
-         margin:1%;
-         cursor:pointer;
-    }
+.icons-main {
+  position: fixed;
+  top: 91%;
+  left: 83%;
+  height: 9vh;
+  width: 17%;
+
+  img {
+    height: 100%;
+    width: 40%;
+    margin: 1%;
+    cursor: pointer;
+  }
+}
+
+.open-form-enter {
+  transform: translateY(100vw);
+  opacity: 0;
+  position: absolute;
+  overflow: hidden;
+}
+.open-form-enter-active {
+  position: absolute;
+  transform: translateY(0);
+  opacity: 1;
+  overflow: hidden;
+  transition: all 800ms ease;
+}
+.open-form-exit {
+  position: absolute;
+  transform: translateY(0);
+  overflow: hidden;
+  opacity: 1;
+}
+.open-form-exit-active {
+  position: absolute;
+  transform: translateY(100vw);
+  opacity: 0;
+  overflow: hidden;
+  transition: all 800ms ease;
 }
