@@ -1,0 +1,29 @@
+::-webkit-scrollbar {
+    display: none;
+  }
+
+// font 
+
+$fontMedio: 'Futura_Md';
+$fontBold: 'Futura_Bold';
+
+//pallet
+$azul:#283047;
+$rosa:#CF1552;
+$branco:#fbeeee;
+$laranja:#E37D4D;
+$amarelo:#F3D549;
+
+img{
+    width:100px;
+}
+
+body{
+    width:100%;
+    height:100%;
+    background:$branco;
+}
+.logo{
+    width:100%;
+    height:100%;
+}

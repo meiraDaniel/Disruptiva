@@ -1,0 +1,16 @@
+@import "../../global.scss";
+
+.icons-main{
+   position:fixed;
+   top:91%;
+   left:83%;
+    height:9vh;
+    width:17%;
+
+    img{
+        height:100%;
+        width:40%;
+         margin:1%;
+         cursor:pointer;
+    }
+}
