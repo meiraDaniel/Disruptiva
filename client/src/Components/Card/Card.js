@@ -6,87 +6,52 @@ export default function Card({ title, text, icon, currentInd }) {
   return (
     <Paper
       elevation={2}
-      style={{
-        height: "30vh",
-        width: "65%",
-        margin: "auto",
-        borderRadius: "30px",
-      }}
+     className="card"
+     style={{background:"#E37D4D"}}
     >
       <Grid
         container
-        style={{
-          height: "100%",
-          width: "100%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
+      className="card-container"
       >
         <Grid
           item
-          xs={4}
-          style={{
-            height: "90%",
-            display: "flex",
-            alignItems: "center",
-          }}
+          xs={5}
+         className="card-image"
         >
           <img className="images-card" src={icon} alt="icon" />
         </Grid>
 
         <Grid
           item
-          xs={8}
+          xs={7}
+          className="card-text"
           style={{
-            background:'red',
-            height: "70%",
-              padding:'2.5%',
+            height: "100%",
+             margin: "0",
           }}
         >
           <Grid
             item
-            xs={10}
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              flexWrap:"wrap",
-              overflow:"hidden"
-            }}
+            xs={12}
+         
           >
-            <Typography color="textSecondary" variant="h5">
+            <h2 >
               {title}
-            </Typography>
+            </h2>
           </Grid>
           <Grid
             item
-            xs={10}
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              flexWrap:"wrap",
-              overflow:"hidden"
-
-            }}
+            xs={12}
+className="card-subtitle"
           >
-            <Typography color="textSecondary" variant="h6" paragraph>
+            <p >
               {text}
-            </Typography>
+            </p>
           </Grid>
-        </Grid>
         <Grid
           item
           xs={12}
-          style={{
-            height: "15%",
-            display: "flex",
-            justifyContent: "center",
-                        background:'blue',
-                        margin:"0"
-
-          }}
+        className="card-carrosel"
         >
           <span className={currentInd === 0 ? "color_red" : "color_white"}>
             &#9900;
@@ -99,6 +64,8 @@ export default function Card({ title, text, icon, currentInd }) {
           </span>
         </Grid>
       </Grid>
+              </Grid>
+
     </Paper>
   );
 }

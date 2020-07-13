@@ -29,13 +29,13 @@ export default function Home() {
   useInterval(nextSlide, 5000);
 
   return (
-    <Grid container style={{ background: "pink" }}>
-      <Grid container style={{ height: "100vh" }}>
+    <Grid container>
+      <Grid container style={{ height: "100vh"}}>
         <Grid item xs={12} style={{ height: "10%", position: "absolute" }}>
           <Navegation />
         </Grid>
         <Hero />
-        <Grid item xs={12} style={{ background: "purple", height: "20%" }}>
+        <Grid item xs={12} style={{ height: "20%" }}>
           <Logo />
         </Grid>
       </Grid>
@@ -43,15 +43,23 @@ export default function Home() {
       <Grid
         container
         justify="center"
-        style={{  height: "70vh", marginTop: "15%", width:'100%', overflow:'hidden' }}
+        style={{
+          height: "80vh",
+          overflow: "hidden",
+          display: "flex",
+          alignItems: "center",
+          background:"black",
+          margin: "3% 0 3% 0" 
+        }}
       >
         <Grid
           item
           xs={12}
           md={6}
           style={{
-            display: "flex",
-            alignItems: "center",
+            heihgt:"40%",
+         
+            marginTop:'20%'
           }}
         >
           <Card
@@ -66,8 +74,9 @@ export default function Home() {
           xs={12}
           md={6}
           style={{
-            display: "flex",
-                     alignItems: "center",
+          
+                        heihgt:"40%",
+
           }}
         >
           <Card
@@ -78,19 +87,27 @@ export default function Home() {
           />
         </Grid>
       </Grid>
-      <Grid container style={{ background: "blue" }}>
-        <Grid item style={{ background: "purple" }}>
-          <PresentationSecond
+      <Grid container>
+        <Grid item style={{ height: "75vh",margin: "3% 0 3% 0" }}>
+          <Presentation
             title="Quem escreve?"
             text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo in nibh faucibus purus id sit tortor arcu eu. Quam sed in sed sit in feugiat risus non porta. Nibh nulla at cras in phasellus tincidunt euismod sit. Viverra in sit vestibulum, justo mauris id ultricies proin massa.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo in nibh faucibus purus id sit tortor arcu eu. Quam sed in sed sit in feugiat risus non porta. Nibh nulla at cras in phasellus tincidunt euismod sit. Viverra in sit vestibulum, justo mauris id ultricies proin massa."
             photo={Ariane}
             id="quemescreve"
           />
         </Grid>
-        <Grid item style={{ background: "purple" }}>
+        <Grid
+          item
+          style={{
+            background: "#F3D549",
+            height: "120vh",
+            width: "100%",
+            margin: "3% 0 3% 0",
+          }}
+        >
           <Portfolio />
         </Grid>
-        <Grid item style={{ background: "purple" }}>
+        <Grid item style={{ height: "75vh", margin: "3% 0 3% 0" }}>
           <Presentation
             title="Quem somos?"
             text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo in nibh faucibus purus id sit tortor arcu eu. Quam sed in sed sit in feugiat risus non porta. Nibh nulla at cras in phasellus tincidunt euismod sit. Viverra in sit vestibulum, justo mauris id ultricies proin massa.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo in nibh faucibus purus id sit tortor arcu eu. Quam sed in sed sit in feugiat risus non porta. Nibh nulla at cras in phasellus tincidunt euismod sit. Viverra in sit vestibulum, justo mauris id ultricies proin massa."
@@ -101,7 +118,10 @@ export default function Home() {
       </Grid>
 
       <Icons />
-      <Grid container style={{ background: "blue" }}>
+      <Grid
+        container
+        style={{ height: "60vh", background: "#F3D549", margin: "3% 0 0% 0" }}
+      >
         <Footer />
       </Grid>
     </Grid>

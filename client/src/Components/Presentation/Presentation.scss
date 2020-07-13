@@ -1,208 +1,68 @@
 @import "../../global.scss";
 
-//extend
-
-%presentation-left {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 40%;
-
-}
-
-%presentation-top-title {
-  display: flex;
-  align-items: center;
+.presentation-image {
   width: 70%;
-  height: 100%;
+  height: 50%;
+  box-shadow: -6px 6px 10px black;
+  background:blue;
 }
-%h1 {
-  height: 100%;
-  width: 100%;
-  font-size: 3.4vh;
-  color: $rosa;
-  display: flex;
-  align-items: center;
-  font-family: $fontBold;
-margin:1%;
-}
-%p {
-  margin-left: 2%;
-  width: 70%;
-  font-family: $fontMedio;
-  margin:1%;
-  line-height:140%;
-  font-size:2vh;
-}
-
-//classes
-
-.presentation-main {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-.presentation-right {
-  height: 60%;
-  width: 100%;
+.image-presentation {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 50%;
+  background:pink;
 
-  img {
-    width: 85%;
-    height: 70%;
-    box-shadow: -6px 10px 10px rgba(0, 0, 0, 0.5);
-  }
+}
+.text-presentation {
+  height: 50%;
+  background:rgb(199, 255, 192);
+
+}
+.subtitle-presentation {
+  height: 70%;
+  flex-basis: 0;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:rgb(201, 192, 255);
+
+}
+.title-presentation {
+  height: 30%;
+  flex-basis: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:$rosa;
+  border-left:3px solid $rosa;
+  padding:3%;
+    background:rgb(255, 192, 236);
+
 }
 
-.presentation-left-title {
-  @extend %presentation-left;
-  p {
-    @extend %p;
+/* 
+@media only screen and (min-width: 600px)  {
+  .presentation-image {
+    width: 70%;
+    height: 75%;
   }
-}
-
-.presentation-top-title {
-  @extend %presentation-top-title;
-
-  h1 {
-    @extend %h1;
+  .image-presentation {
+    height: 80%;
   }
-}
-//second
-.presentation-second-left-title {
-  @extend %presentation-left;
-
-  p {
-    @extend %p;
-  }
-}
-
-.presentation-second-top-title {
-  @extend %presentation-top-title;
-
-  h1 {
-    @extend %h1;
-  }
-}
-
-@media only screen and (min-width: 640px) and (max-width: 940px) and (max-height: 500px) {
-  .presentation-main {
-    height: 80vh;
-    flex-direction: row;
-
-  }
-
-  %presentation-left {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 50%;
-    height: 100%;
-  }
-  .presentation-right {
-    width: 50%;
-    height: 100%;
-  }
-  %presentation-top-title {
-    width: 60%;
-    height: 30%;
-  }
-
-  %h1 {
-    height: 100%;
-    width: 60%;
-    font-size: 8vh;
-  }
-  %p {
-    width: 90%;
-  }
-}
-@media only screen and (min-width: 640px) and (max-width: 900px) and (min-height: 501px) {
-  .presentation-main {
-    height: 55vh;
-    flex-direction: row;
+  .text-presentation {
+    height: 80%;
     display: flex;
+    flex-direction:column;
     justify-content: center;
-    flex-direction: row;
-    align-items: center;
   }
-
-  %presentation-left {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 50%;
+  .subtitle-presentation {
     height: 70%;
   }
-  .presentation-right {
-    width: 50%;
-    height: 100%;
-
-  }
-  %presentation-top-title {
-    width: 90%;
-    height: 30%;
-  }
-
-  %h1 {
-    height: 100%;
-    width: 50%;
-    font-size: 5vh;
-  }
-  %p {
-    width: 90%;
-    height: 70%;
-    font-size: 2.6vh;
-  }
-  .presentation-second-top-title {
-    justify-content: flex-end;
+  .title-presentation {
+    height: 25%;
+    
   }
 }
-@media only screen and (min-width: 901px) {
-  .presentation-main {
-    height: 70vh;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
-    margin-top:2%;
-    margin-bottom:5%;
-    background:blue;
-  }
-
-  %presentation-left {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 40%;
-    height: 70%;
-  }
-  .presentation-right {
-    width: 40%;
-    height: 100%;
-  }
-  %presentation-top-title {
-    height: 30%;
-    width: 100%;
-    justify-content: flex-start;
-    margin: 0;
-  }
-
-  %h1 {
-    height: 100%;
-    width: 60%;
-    font-size: 6vh;
-  }
-  %p {
-    display: flex;
-    margin: 0;
-    width: 100%;
-    height: 70%;
-    font-size: 2.4vh;
-  }
-
-  .presentation-second-top-title {
-    justify-content: flex-end;
-  }
-}
+ */

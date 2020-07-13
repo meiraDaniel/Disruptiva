@@ -12,16 +12,16 @@ import saude from "../../Images/logo/saude.png";
 import wellerson from "../../Images/logo/WELLERSON.png";
 
 export const logos = [
-  meridiano,
+ [ meridiano,
   hangar,
-  kimtara,
-  edição,
+  kimtara],
+  [edição,
   wtres,
-  urbaville,
-  ufmg,
+  urbaville],
+ [ ufmg,
   patricia,
-  psi,
-  rehagro2,
+  psi,],
+  [rehagro2,
   saude,
-  wellerson
+  wellerson]
 ];

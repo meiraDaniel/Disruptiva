@@ -1,14 +1,93 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
 import "./Portfolio.scss";
 import VideoPlayer from "../Video/VideoPlayer";
+import { Grid, ButtonBase, Typography } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import camera from "../../Images/cameraPhoto.png";
+import loading from "../../Images/Icons/loader.svg";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: "flex",
+    flexWrap: "wrap",
+    minWidth: 300,
+    width: "100%",
+  },
+  image: {
+    position: "relative",
+    height: 200,
+    [theme.breakpoints.down("xs")]: {
+      width: "100% !important", // Overrides inline-style
+      height: 100,
+    },
+    "&:hover, &$focusVisible": {
+      zIndex: 1,
+      "& $imageBackdrop": {
+        opacity: 0.15,
+      },
+      "& $imageMarked": {
+        opacity: 0,
+      },
+      "& $imageTitle": {
+        border: "4px solid currentColor",
+      },
+    },
+  },
+  focusVisible: {},
+  imageButton: {
+    position: "relative",
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    color: theme.palette.common.white,
+    cursor: "pointer",
+  },
+  imageSrc: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
+    backgroundSize: "cover",
+     backgroundPosition: "center",
+  },
+  imageBackdrop: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
+    backgroundColor: theme.palette.common.black,
+    opacity: 0.4,
+    transition: theme.transitions.create("opacity"),
+  },
+  imageTitle: {
+    position: "relative",
+    padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${
+      theme.spacing(1) + 6
+    }px`,
+  },
+  imageMarked: {
+    height: 3,
+    width: 18,
+    backgroundColor: theme.palette.common.white,
+    position: "relative",
+    bottom: -2,
+    left: "calc(50% - 9px)",
+    transition: theme.transitions.create("opacity"),
+  },
+}));
 
 export default function Portfolio() {
   const [infoVideos, setInfoVideos] = useState();
   const [currentVideo, setCurrentVideo] = useState();
   const [playlistVideos, setPlaylistVideos] = useState([]);
-
+  const classes = useStyles();
 
   const getVideoInfos = async () => {
     const res = await axios.get(`http://localhost:5000/api/youtubeVideos`, {
@@ -41,37 +120,89 @@ export default function Portfolio() {
   };
 
   return (
-    <div className="portfolio">
-      <div className="portifolio--top-playlist">
-        <div className="portifolio-left">
-          <h1>Portfolio</h1>
-          <p>Lorem ipsum dolor sit amet
-          Lorem ipsum dolor sit amet
-          Lorem ipsum dolor sit amet
-          </p>
-        </div>
-        <div className="portfolio-images-map">
-      {playlistVideos.map((data) => 
-      <div className="img-thumbnail">
-          <img
-          
-            key={data.id}
+    <Grid container style={{ height: "100%" }}>
+      <Grid
+        container
+        spacing={1}
+        style={{
+          height: "20%",
+          background:'blue'
+        }}
+      >
+        <Grid item xs={2} style={{ background:"pink" }} >
+          <Grid item xs={10} >
+            <h1>Portfolio</h1>
+          </Grid>
+          <Grid item xs={10}>
+            <p>
+              Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
+              dolor sit amet
+            </p>
+          </Grid>
+        </Grid>
+        <Grid item xs={10} style={{display:"flex"}}>
+          {playlistVideos.map((data,i) => (
+            <Grid xs={3} onClick={() => handleSelectVideo(data)} key={i} item style={{background:`url(${data.urlThumbnail}`,backgroundPosition:"center center", backgroundSize:"cover"}} >
+             </Grid>))}
             
-            onClick={() => handleSelectVideo(data)}
-            src={data.urlThumbnail}
+      
+        </Grid>
+      </Grid>
+
+      <Grid
+        container
+        justify="center"
+        style={{ height: "80%",          background:'red'
+      }}
+      >
+        <Grid item xs={8} style={{ height: "80%", marginTop: "5%" }}>
+          {currentVideo ? (
+            <VideoPlayer video={currentVideo} />
+          ) : (
+            <img src={loading} alt="placeholder" className="portfolio_loadinImage" />
+          )}
+        </Grid>
+      </Grid>
+      <Grid
+        className={classes.root}
+        item
+        xs={12}
+        style={{
+          height: "10%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <ButtonBase
+          focusRipple
+          key="Camera"
+          className={classes.image}
+          focusVisibleClassName={classes.focusVisible}
+          style={{
+            width: "100%",
+          }}
+        >
+          <span
+            className={classes.imageSrc}
+            style={{
+              backgroundImage: `url(${camera})`,
+            }}
           />
-      </div>
-      )}
-      </div>
-      <div className="portifolio-left">
-          <h1>Acesse a playlist</h1>
-       
-        </div>
-</div>
-      <div className="video_player">
-        <div className="video_player-content">
-        <VideoPlayer video={currentVideo} /></div>
-      </div>
-    </div>
+          <span className={classes.imageBackdrop} />
+          <span className={classes.imageButton}>
+            <Typography
+              component="span"
+              variant="subtitle1"
+              color="inherit"
+              className={classes.imageTitle}
+            >
+              Acesse a Playlist
+              <span className={classes.imageMarked} />
+            </Typography>
+          </span>
+        </ButtonBase>
+      </Grid>
+    </Grid>
   );
 }
