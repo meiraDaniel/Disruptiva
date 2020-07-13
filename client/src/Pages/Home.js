@@ -3,6 +3,7 @@ import Navegation from "../Components/Navegation/Navegation";
 import Hero from "../Components/Hero/Hero";
 import Logo from "../Components/Logos/Logos";
 import Card from "../Components/Card/Card";
+import ContactForm from "../Components/Forms/ContactForm";
 import camera from "../Images/Icons/camera.svg";
 import price from "../Images/Icons/price.svg";
 import useInterval from "react-useinterval";
@@ -15,6 +16,8 @@ import Icons from "../Components/Icons/Icons";
 import Footer from "../Components/Footer/Footer";
 import "./Home.scss";
 import { Grid } from "@material-ui/core";
+
+import ShowFormProvider from "../Context/ShowForm";
 
 export default function Home() {
   const [currentInd, setCurrentInd] = useState(0);
@@ -43,7 +46,12 @@ export default function Home() {
       <Grid
         container
         justify="center"
-        style={{  height: "70vh", marginTop: "15%", width:'100%', overflow:'hidden' }}
+        style={{
+          height: "70vh",
+          marginTop: "15%",
+          width: "100%",
+          overflow: "hidden",
+        }}
       >
         <Grid
           item
@@ -67,7 +75,7 @@ export default function Home() {
           md={6}
           style={{
             display: "flex",
-                     alignItems: "center",
+            alignItems: "center",
           }}
         >
           <Card
@@ -100,7 +108,10 @@ export default function Home() {
         </Grid>
       </Grid>
 
-      <Icons />
+      <ShowFormProvider>
+        <Icons />
+        <ContactForm />
+      </ShowFormProvider>
       <Grid container style={{ background: "blue" }}>
         <Footer />
       </Grid>

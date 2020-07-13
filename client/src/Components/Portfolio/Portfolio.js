@@ -9,7 +9,6 @@ export default function Portfolio() {
   const [currentVideo, setCurrentVideo] = useState();
   const [playlistVideos, setPlaylistVideos] = useState([]);
 
-
   const getVideoInfos = async () => {
     const res = await axios.get(`http://localhost:5000/api/youtubeVideos`, {
       headers: {
@@ -45,32 +44,30 @@ export default function Portfolio() {
       <div className="portifolio--top-playlist">
         <div className="portifolio-left">
           <h1>Portfolio</h1>
-          <p>Lorem ipsum dolor sit amet
-          Lorem ipsum dolor sit amet
-          Lorem ipsum dolor sit amet
+          <p>
+            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
+            dolor sit amet
           </p>
         </div>
         <div className="portfolio-images-map">
-      {playlistVideos.map((data) => 
-      <div className="img-thumbnail">
-          <img
-          
-            key={data.id}
-            
-            onClick={() => handleSelectVideo(data)}
-            src={data.urlThumbnail}
-          />
-      </div>
-      )}
-      </div>
-      <div className="portifolio-left">
-          <h1>Acesse a playlist</h1>
-       
+          {playlistVideos.map((data) => (
+            <div className="img-thumbnail">
+              <img
+                key={data.id}
+                onClick={() => handleSelectVideo(data)}
+                src={data.urlThumbnail}
+              />
+            </div>
+          ))}
         </div>
-</div>
+        <div className="portifolio-left">
+          <h1>Acesse a playlist</h1>
+        </div>
+      </div>
       <div className="video_player">
         <div className="video_player-content">
-        <VideoPlayer video={currentVideo} /></div>
+          <VideoPlayer video={currentVideo} />
+        </div>
       </div>
     </div>
   );
