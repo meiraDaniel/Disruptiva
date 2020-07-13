@@ -1,27 +1,36 @@
 ::-webkit-scrollbar {
-    display: none;
-  }
+  display: none;
+}
 
-// font 
+// font
 
-$fontMedio: 'Futura_Md';
-$fontBold: 'Futura_Bold';
+$fontMedio: "Futura_Md";
+$fontBold: "Futura_Bold";
 
 //pallet
-$azul:#283047;
-$rosa:#CF1552;
-$branco:#fbeeee;
-$laranja:#E37D4D;
-$amarelo:#F3D549;
+$azul: #283047;
+$rosa: #cf1552;
+$branco: #fbeeee;
+$laranja: #e37d4d;
+$amarelo: #f3d549;
+$error: #ff0033;
 
 
-
-body{
-    width:100%;
-    height:100%;
-    background:$branco;
+body {
+  width: 100%;
+  height: 100%;
+  background: $branco;
 }
-.logo{
-    width:100%;
-    height:100%;
+.logo {
+  width: 100%;
+  height: 100%;
+}
+
+:export {
+  azul: $azul;
+  rosa: $rosa;
+  branco: $branco;
+  laranja: $laranja;
+  amarelo: $amarelo;
+  error: $error;
 }
