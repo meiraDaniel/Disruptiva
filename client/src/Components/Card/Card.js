@@ -37,7 +37,7 @@ export default function Card({ title, text, icon, currentInd }) {
               textAlign:"center",
             }}
           >
-            <Typography variant="h3">
+            <Typography variant="h3" color="primary">
               {title}
             </Typography>
           </Grid>

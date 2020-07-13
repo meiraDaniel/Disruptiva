@@ -1,65 +1,54 @@
 import React from "react";
-import linkedin from "../../Images/Icons/white/linkedin_white.svg";
-import instagram from "../../Images/Icons/white/instagram_white.svg";
-import youtube from "../../Images/Icons/white/youtube_white.svg";
-import facebook from "../../Images/Icons/white/facebook_white.svg";
+
 import logo from "../../Images/logo_branco.png";
 import "./Footer.scss";
+import { Grid, Typography } from "@material-ui/core";
+import { social } from "../../Helpers/socialMedia";
+import { makeStyles } from "@material-ui/core/styles";
 
+const useStyles = makeStyles({
+  root:{
+    color:"white",
+    wordBreadk:"break"
+  }
+});
 export default function Footer() {
+      const classes = useStyles();
+
   return (
-    <div className="footer-main">
-      <div className="footer-top">
-        <div className="footer-left-endereco">
-          <h2 >Endereço</h2>
-          <p>Rua Peçanha, 161,</p>
-          <p>Bloco 11 Sala 202</p>
-          <p>Carlos Prates</p>
-          <p>Belo Horizonte</p>
-          <p>Minas Gerais</p>
-        </div>
-        <div className="footer-center-conta">
-          <h2>Contato</h2>
-          <p>audiovisualdisruptiva@gmail.com</p>
-          <p>31 997139306</p>
-        </div>
-        <div className="footer-right-img">
-          <img src={logo} alt="logo" />
-        </div>
-      </div>
-      <div className="footer-bottom">
-        <a
-          href="http://www.linkedin.com/company/disruptiva-audiovisual"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {" "}
-          <img src={linkedin} alt="linkedin" />
-        </a>
-        <a
-          href="http://www.instagram.com/disruptivaaudiovisual"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src={instagram} alt="instagram" />
-        </a>
-        <a
-          href="http://www.youtube.com/channel/UCevh_khIWxGnjhL1CMbdi7A?view_as=subscriber  "
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src={youtube} alt="youtube" />
-        </a>
-        <a
-          href="http://www.facebook.com/disruptivaaudiovisual"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {" "}
-          <img src={facebook} alt="facebook" />
-        </a>
-      </div>
-      <p id="copyrights">	 Copyright &#xA9; 2020 Lidas </p>
-    </div>
+    <Grid container spacing={1} >
+      <Grid container style={{padding:'2%', background:"purple"}}>
+        <Grid item xs={7}>
+          <Typography variant="h5" color="primary">Endereço</Typography>
+          <Typography  className={classes.root}  variant="body2">Rua Peçanha, 161,</Typography>
+          <Typography className={classes.root}  variant="body2">Bloco 11 Sala 202</Typography>
+          <Typography className={classes.root}  variant="body2">Carlos Prates</Typography>
+          <Typography className={classes.root}  variant="body2">Belo Horizonte</Typography>
+          <Typography className={classes.root}  variant="body2">Minas Gerais</Typography>
+        </Grid>
+        <Grid item xs={7}>
+          <Typography variant="h5" color="primary">Contato</Typography>
+          <Typography className={classes.root}  variant="body2">
+            audiovisualdisruptiva@gmail.com
+          </Typography>
+          <Typography className={classes.root}  variant="body2">31 997139306</Typography>
+        </Grid>
+        <Grid item xs={4}>
+          <img src={logo} alt="logo" className="logo"/>
+        </Grid>
+      </Grid>
+      <Grid container  style={{height:"20%",background:"red", width:'100%'}}>
+        {social.map(({ href, name, src }) => (
+          <Grid item xs={2}>
+            <a href={href} target="_blank" rel="noopener noreferrer">
+              {" "}
+              <img src={src} alt={name}  />
+            </a>
+          </Grid>
+        ))}
+
+        <Typography className={classes.root}  variant="body2" id="copyrights"> Copyright &#xA9; 2020 Lidas </Typography>
+      </Grid>
+    </Grid>
   );
 }

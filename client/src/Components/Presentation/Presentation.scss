@@ -4,19 +4,16 @@
   width: 80%;
   height: 80%;
   box-shadow: -6px 6px 10px black;
-  background:blue;
 }
 .image-presentation {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 50%;
-  background:pink;
 
 }
 .text-presentation {
   height: 50%;
-  background:rgb(199, 255, 192);
 
 
 }
@@ -27,7 +24,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background:rgb(201, 192, 255);
   flex-wrap:wrap;
   overflow:hidden;
 
@@ -36,12 +32,10 @@
   height: 20%;
   flex-basis: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
   color:$rosa;
-  border-left:3px solid $rosa;
   padding:3%;
-    background:rgb(255, 192, 236);
+
 }
 
 @media only screen and (min-width:600px){

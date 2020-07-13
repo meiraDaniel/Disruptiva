@@ -120,29 +120,27 @@ export default function Portfolio() {
   };
 
   return (
-    <Grid container style={{ height: "100%" }}>
+    <Grid container style={{ height: "100%" , background:"#f3d549"}}>
       <Grid
         container
-        spacing={1}
+        spacing={2}
         style={{
           height: "20%",
-          background:'blue'
         }}
       >
-        <Grid item xs={2} style={{ background:"pink" }} >
+        <Grid item xs={4} sm={3} lg={2} style={{ background:"#e37d4d", padding:'3%' }} >
           <Grid item xs={10} >
-            <h1>Portfolio</h1>
+            <Typography variant='h5' color='primary'>Portfolio</Typography>
           </Grid>
           <Grid item xs={10}>
-            <p>
-              Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-              dolor sit amet
-            </p>
+            <Typography variant='body2'>
+              Lorem ipsum dolor sit amet 
+            </Typography>
           </Grid>
         </Grid>
-        <Grid item xs={10} style={{display:"flex"}}>
+        <Grid item xs={8} sm={9} lg={10} style={{display:"flex"}}>
           {playlistVideos.map((data,i) => (
-            <Grid xs={3} onClick={() => handleSelectVideo(data)} key={i} item style={{background:`url(${data.urlThumbnail}`,backgroundPosition:"center center", backgroundSize:"cover"}} >
+            <Grid xs={3} onClick={() => handleSelectVideo(data)} key={i} item style={{background:  `url(${data.urlThumbnail}` ,backgroundPosition:"center center", backgroundSize:"cover"}} >
              </Grid>))}
             
       
@@ -152,16 +150,15 @@ export default function Portfolio() {
       <Grid
         container
         justify="center"
-        style={{ height: "80%",          background:'red'
+        alignItems='center'
+        style={{ height: "80%"
       }}
       >
-        <Grid item xs={8} style={{ height: "80%", marginTop: "5%" }}>
           {currentVideo ? (
             <VideoPlayer video={currentVideo} />
           ) : (
             <img src={loading} alt="placeholder" className="portfolio_loadinImage" />
           )}
-        </Grid>
       </Grid>
       <Grid
         className={classes.root}

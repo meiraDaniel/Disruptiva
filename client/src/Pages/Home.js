@@ -17,6 +17,7 @@ import Footer from "../Components/Footer/Footer";
 import "./Home.scss";
 import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import ShowFormProvider from "../Context/ShowForm";
 
 const useStyles = makeStyles({
   marginPresentation: {
@@ -26,8 +27,6 @@ const useStyles = makeStyles({
     },
   },
 });
-
-import ShowFormProvider from "../Context/ShowForm";
 
 export default function Home() {
   const classes = useStyles();
@@ -140,7 +139,7 @@ export default function Home() {
         <Icons />
         <ContactForm />
       </ShowFormProvider>
-      <Grid container style={{ background: "blue" }}>
+      <Grid container style={{background:"#f3d549", height:"80vh"}} >
         <Footer />
       </Grid>
     </Grid>
