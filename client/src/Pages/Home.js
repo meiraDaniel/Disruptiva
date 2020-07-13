@@ -3,6 +3,7 @@ import Navegation from "../Components/Navegation/Navegation";
 import Hero from "../Components/Hero/Hero";
 import Logo from "../Components/Logos/Logos";
 import Card from "../Components/Card/Card";
+import ContactForm from "../Components/Forms/ContactForm";
 import camera from "../Images/Icons/camera.svg";
 import price from "../Images/Icons/price.svg";
 import useInterval from "react-useinterval";
@@ -25,6 +26,8 @@ const useStyles = makeStyles({
     },
   },
 });
+
+import ShowFormProvider from "../Context/ShowForm";
 
 export default function Home() {
   const classes = useStyles();
@@ -133,11 +136,11 @@ export default function Home() {
         </Grid>
       </Grid>
 
-      <Icons />
-      <Grid
-        container
-        style={{ height: "60vh", background: "#F3D549", margin: "3% 0 0% 0" }}
-      >
+      <ShowFormProvider>
+        <Icons />
+        <ContactForm />
+      </ShowFormProvider>
+      <Grid container style={{ background: "blue" }}>
         <Footer />
       </Grid>
     </Grid>

@@ -16,8 +16,6 @@ const FormField = ({
 }) => {
   const classes = useStyles();
 
-  console.log(classField);
-
   return (
     <div className={classes[classField]}>
       <Typography variant="body1" className={classes.inputLabel}>
