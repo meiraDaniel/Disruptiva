@@ -15,8 +15,20 @@ import Icons from "../Components/Icons/Icons";
 import Footer from "../Components/Footer/Footer";
 import "./Home.scss";
 import { Grid } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles({
+  marginPresentation: {
+    margin: "30% 0 3% 0",
+    "@media (min-width:900px)": {
+      margin: "10% 0 3% 0",
+    },
+  },
+});
 
 export default function Home() {
+  const classes = useStyles();
+
   const [currentInd, setCurrentInd] = useState(0);
   const text = [
     "Lorem ipsum dolor sit amet.",
@@ -30,7 +42,7 @@ export default function Home() {
 
   return (
     <Grid container>
-      <Grid container style={{ height: "100vh"}}>
+      <Grid container style={{ height: "100vh" }}>
         <Grid item xs={12} style={{ height: "10%", position: "absolute" }}>
           <Navegation />
         </Grid>
@@ -42,24 +54,23 @@ export default function Home() {
 
       <Grid
         container
+        spacing={2}
         justify="center"
         style={{
-          height: "80vh",
+          height: "60vh",
           overflow: "hidden",
-          display: "flex",
-          alignItems: "center",
-          background:"black",
-          margin: "3% 0 3% 0" 
+          margin: "10% 0 0 0",
         }}
       >
         <Grid
           item
-          xs={12}
+          xs={11}
+          sm={6}
           md={6}
+          lg={5}
           style={{
-            heihgt:"40%",
-         
-            marginTop:'20%'
+            display: "flex",
+            alignItems: "center",
           }}
         >
           <Card
@@ -71,12 +82,13 @@ export default function Home() {
         </Grid>
         <Grid
           item
-          xs={12}
+          xs={11}
+          sm={6}
           md={6}
+          lg={5}
           style={{
-          
-                        heihgt:"40%",
-
+            display: "flex",
+            alignItems: "center",
           }}
         >
           <Card
@@ -87,8 +99,8 @@ export default function Home() {
           />
         </Grid>
       </Grid>
-      <Grid container>
-        <Grid item style={{ height: "75vh",margin: "3% 0 3% 0" }}>
+      <Grid container style={{ overflow: "hidden" }}>
+        <Grid item style={{ height: "75vh", margin: "3% 0 3% 0" }}>
           <Presentation
             title="Quem escreve?"
             text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo in nibh faucibus purus id sit tortor arcu eu. Quam sed in sed sit in feugiat risus non porta. Nibh nulla at cras in phasellus tincidunt euismod sit. Viverra in sit vestibulum, justo mauris id ultricies proin massa.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo in nibh faucibus purus id sit tortor arcu eu. Quam sed in sed sit in feugiat risus non porta. Nibh nulla at cras in phasellus tincidunt euismod sit. Viverra in sit vestibulum, justo mauris id ultricies proin massa."
@@ -107,7 +119,11 @@ export default function Home() {
         >
           <Portfolio />
         </Grid>
-        <Grid item style={{ height: "75vh", margin: "3% 0 3% 0" }}>
+        <Grid
+          item
+          className={classes.marginPresentation}
+          style={{ height: "75vh" }}
+        >
           <Presentation
             title="Quem somos?"
             text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo in nibh faucibus purus id sit tortor arcu eu. Quam sed in sed sit in feugiat risus non porta. Nibh nulla at cras in phasellus tincidunt euismod sit. Viverra in sit vestibulum, justo mauris id ultricies proin massa.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo in nibh faucibus purus id sit tortor arcu eu. Quam sed in sed sit in feugiat risus non porta. Nibh nulla at cras in phasellus tincidunt euismod sit. Viverra in sit vestibulum, justo mauris id ultricies proin massa."

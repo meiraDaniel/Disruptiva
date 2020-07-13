@@ -13,16 +13,20 @@
 
 
 .logos {
-  height: 90%;
-  width: 30%;
-  margin-right: 5%;
+  height: 45%;
+    margin-right: 8%;
 }
-<<<<<<< HEAD
-=======
-@media only screen and (min-width: 1000px) {
-  .logos-main {
-    bottom: -20%;
-    height: 20vh;
+@media only screen and (min-width:400px)and (max-width:899px) and (orientation:landscape){
+
+  .logos {
+    height: 80%;
+      margin-right: 15%;
   }
 }
->>>>>>> b329c7535c4b439fdbae8f9e6c1a87f84fdf032d
+
+@media only screen and (min-width:900px){
+  .logos {
+    height: 80%;
+      margin-right: 15%;
+  }
+}

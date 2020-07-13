@@ -5,7 +5,7 @@ import { Grid, Paper, Typography } from "@material-ui/core";
 export default function Card({ title, text, icon, currentInd }) {
   return (
     <Paper
-      elevation={2}
+      elevation={3}
      className="card"
      style={{background:"#E37D4D"}}
     >
@@ -33,20 +33,26 @@ export default function Card({ title, text, icon, currentInd }) {
           <Grid
             item
             xs={12}
-         
+            style={{
+              textAlign:"center",
+            }}
           >
-            <h2 >
+            <Typography variant="h3">
               {title}
-            </h2>
+            </Typography>
           </Grid>
           <Grid
             item
             xs={12}
+            style={{
+              textAlign:"center",
+
+            }}
 className="card-subtitle"
           >
-            <p >
+            <Typography variant="body1">
               {text}
-            </p>
+            </Typography>
           </Grid>
         <Grid
           item

@@ -6,26 +6,27 @@ export default function Presentation({ title, text, photo, id }) {
   return (
     <Grid
       container
+      spacing={2}
       justify="center"
       alignItems="center"
-      style={{ height: "100%" }}
+      style={{ height: "100%",background:"purple" }}
     >
-      <Grid item xs={12} sm={5} lg={4} className="text-presentation">
+      <Grid item xs={12} sm={5} lg={4}   style={{ background:"brown" }} className="text-presentation">
         <Grid
           item
           xs={12}
-          sm={7}
+          sm={12}
           className="title-presentation"
-          style={{ flexBasis: 0 }}
+          style={{ background:"yellow"}}
         >
-          <Typography variant="h3">{title}</Typography>
+          <Typography variant="h4">{title}</Typography>
         </Grid>
         <Grid
           item
           xs={12}
-          sm={9}
+          sm={12}
           className="subtitle-presentation"
-          style={{ flexBasis: 0 }}
+          style={{ background:"red"}}
         >
           <Typography variant="body2">{text}</Typography>
         </Grid>

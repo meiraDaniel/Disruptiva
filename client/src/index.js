@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import "./global.scss";
-import { createMuiTheme,ThemeProvider } from "@material-ui/core/styles";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
 const theme = createMuiTheme({
   palette: {
@@ -23,6 +23,55 @@ const theme = createMuiTheme({
   },
   typography: {
     fontFamily: ["Futura_Md", "Futura_Bold"],
+    h1: {
+      fontSize: "7rem",
+    },
+
+    h3: {
+      fontSize: "1.2rem",
+      "@media (min-width:600px) and (max-width:900px)": {
+        fontSize: "1.8rem",
+        color: "white",
+      },
+      "@media (min-width:901px)": {
+        fontSize: "1.8rem",
+        color: "white",
+      },
+    },
+    body1: {
+      fontSize: "1.3rem",
+      "@media (min-width:600px) and (orientation:portrait) and (max-width:900px)": {
+        fontSize: "1.5rem",
+        color: "blue",
+      },
+      "@media (min-width:901px)": {
+        fontSize: "2.3rem",
+        color: "white",
+      },
+    },
+    h4: {
+      fontSize: "1.6rem",
+      "@media (min-width:600px) and (orientation:portrait) and (max-width:900px)": {
+        fontSize: "1.5rem",
+        color: "blue",
+      },
+      "@media (min-width:901px)": {
+        fontSize: "2.3rem",
+        color: "white",
+      },
+    },
+    body2: {
+      fontSize: "0.8rem",
+
+      "@media (min-width:600px) and (orientation:portrait) and (max-width:900px)": {
+        fontSize: "1.5rem",
+        color: "blue",
+      },
+      "@media (min-width:901px)": {
+        fontSize: "1.5rem",
+        color: "white",
+      },
+    },
   },
 });
 

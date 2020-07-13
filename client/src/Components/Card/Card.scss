@@ -1,5 +1,5 @@
 .card {
-  height: 30vh;
+  height: 100%;
   width: 100%;
   margin: auto;
   border-radius: 30px;
@@ -8,54 +8,38 @@
 .card-container {
   height: 100%;
 
-  background:rgb(136, 255, 0);
-
 }
 .card-image {
   height: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background:rgb(255, 0, 200);
-
 }
 .card-text {
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
   overflow: hidden;
-  height:80%;
-  background:rgb(0, 183, 255);
+  height: 80%;
+  padding: 1%;
+  align-items:center;
 
-  h2 {
-    margin: 0;
-    height:20%;
 
-  }
-  p {
-    height:80%;
-    background:rgb(255, 0, 0);
-  }
 }
 
-.card-carrosel{
+.card-carrosel {
   height: 20%;
   display: flex;
   justify-content: center;
   margin: 0;
-  background:rgb(255, 251, 0);
-
 }
 .images-card {
   widows: 50%;
   height: 50%;
-  background:rgb(255, 0, 106);
-
 }
-.card-carrosel{
-  display:flex;
+.card-carrosel {
+  display: flex;
 }
- .color_white {
+.color_white {
   font-size: 5vh;
   color: white;
   margin: 0;
@@ -68,4 +52,16 @@
   margin: 0;
   align-items: center;
   display: flex;
-} 
+}
+
+
+@media only screen and (min-width: 600px) and (orientation:landscape){
+  .card {
+    height: 70%;
+  }
+}
+@media only screen and (min-width: 600px) and (orientation:portrait){
+  .card {
+    height: 50%;
+  }
+}
