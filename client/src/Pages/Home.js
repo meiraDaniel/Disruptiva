@@ -144,7 +144,7 @@ export default function Home() {
       </ShowFormProvider>
       <Grid
         container
-        style={{ background: "#f3d549", height: "80vh", overflow: "hidden" }}
+        style={{ background: "#f3d549", height: "60vh", overflow: "hidden" }}
       >
         <Footer />
       </Grid>
