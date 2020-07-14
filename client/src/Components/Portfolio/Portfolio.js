@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
     top: 0,
     bottom: 0,
     backgroundSize: "cover",
-     backgroundPosition: "center",
+    backgroundPosition: "center",
   },
   imageBackdrop: {
     position: "absolute",
@@ -120,45 +120,63 @@ export default function Portfolio() {
   };
 
   return (
-    <Grid container style={{ height: "100%" , background:"#f3d549"}}>
+    <Grid container style={{ height: "100%", background: "#f3d549" }}>
       <Grid
         container
-        spacing={2}
         style={{
           height: "20%",
         }}
       >
-        <Grid item xs={4} sm={3} lg={2} style={{ background:"#e37d4d", padding:'3%' }} >
-          <Grid item xs={10} >
-            <Typography variant='h5' color='primary'>Portfolio</Typography>
-          </Grid>
+        <Grid
+          item
+          xs={3}
+          sm={3}
+          lg={2}
+          style={{  height: "100%", background: "#e37d4d", padding: "3%" }}
+        >
           <Grid item xs={10}>
-            <Typography variant='body2'>
-              Lorem ipsum dolor sit amet 
+            <Typography variant="h5" color="primary">
+              Portfolio
             </Typography>
           </Grid>
+          <Grid item xs={10}>
+            <Typography variant="body2">Lorem ipsum dolor sit amet</Typography>
+          </Grid>
         </Grid>
-        <Grid item xs={8} sm={9} lg={10} style={{display:"flex"}}>
-          {playlistVideos.map((data,i) => (
-            <Grid xs={3} onClick={() => handleSelectVideo(data)} key={i} item style={{background:  `url(${data.urlThumbnail}` ,backgroundPosition:"center center", backgroundSize:"cover"}} >
-             </Grid>))}
-            
-      
+        <Grid item xs={9}  lg={10} style={{   height: "100%",display: "flex" }}>
+          {playlistVideos.map((data, i) => (
+            <Grid
+              xs={3}
+              onClick={() => handleSelectVideo(data)}
+              key={i}
+              item
+              style={{
+                background: `url(${data.urlThumbnail}`,
+                backgroundPosition: "center center",
+                backgroundSize: "cover",
+                backgroundRepeat:"no-repeat",
+                cursor:"pointer",
+           
+              }}
+            ></Grid>
+          ))}
         </Grid>
       </Grid>
 
-      <Grid
-        container
-        justify="center"
-        alignItems='center'
-        style={{ height: "80%"
-      }}
-      >
-          {currentVideo ? (
+      <Grid container justify="center" style={{ height: "70%", marginTop:"5%"}}>
+        {currentVideo ? (
+          <Grid item xs={12} sm={8} style={{ height: "90%", zIndex:"9"}}>
             <VideoPlayer video={currentVideo} />
-          ) : (
-            <img src={loading} alt="placeholder" className="portfolio_loadinImage" />
-          )}
+          </Grid>
+        ) : (
+          <Grid item xs={12} sm={6} style={{ height: "90%", zIndex:"9"}}>
+            <img
+              src={loading}
+              alt="placeholder"
+              className="portfolio_loadinImage"
+            />
+          </Grid>
+        )}
       </Grid>
       <Grid
         className={classes.root}

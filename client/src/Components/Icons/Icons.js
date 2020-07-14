@@ -11,10 +11,12 @@ export default function Icons() {
 
   return (
     <div className="icons-main">
-      <a href="https://api.whatsapp.com/send?phone=5531997139306">
+   
+      <a className="icon-size" href="https://api.whatsapp.com/send?phone=5531997139306">
         <img src={whatsapp} alt="whatsapp" />
       </a>
-      <img src={message} onClick={() => setShowForm(true)} alt="message" />
+      <img  className="icon-size" src={message} onClick={() => setShowForm(true)} alt="message" />
+     
     </div>
   );
 }

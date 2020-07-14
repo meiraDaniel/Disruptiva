@@ -5,7 +5,8 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
 borderTitle:{
-  borderLeft:'3px solid #cf1552'
+  borderLeft:'3px solid #cf1552',
+  paddingLeft:'3%'
 
 }
 });
@@ -40,7 +41,7 @@ export default function Presentation({ title, text, photo, id }) {
         </Grid>
       </Grid>
       <Grid item xs={12} sm={6} lg={4} className="image-presentation">
-        <img src={photo} alt="team" className="presentation-image" />
+        <img src={photo} alt="team" />
       </Grid>
     </Grid>
   );

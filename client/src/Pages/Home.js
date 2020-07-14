@@ -22,6 +22,9 @@ import ShowFormProvider from "../Context/ShowForm";
 const useStyles = makeStyles({
   marginPresentation: {
     margin: "30% 0 3% 0",
+    "@media (min-width:600px) and (max-width:900px) and (orientation:portrait)": {
+      margin: "6% 0 3% 0",
+    },
     "@media (min-width:900px)": {
       margin: "10% 0 3% 0",
     },
@@ -30,17 +33,16 @@ const useStyles = makeStyles({
 
 export default function Home() {
   const classes = useStyles();
-
   const [currentInd, setCurrentInd] = useState(0);
   const text = [
-    "Lorem ipsum dolor sit amet.",
-    "Lorem ipsum dolor sit amet.",
-    "Lorem ipsum dolor sit amet.",
+    "1 Lorem ipsum dolor sit amet.",
+    " 2 Lorem ipsum dolor sit amet.",
+    " 3 Lorem ipsum dolor sit amet.",
   ];
-  const nextSlide = () => {
-    setCurrentInd((state) => (state + 1) % text.length);
+  const nextSlide =  () => {
+     setCurrentInd((state) => (state + 1) % text.length);
   };
-  useInterval(nextSlide, 5000);
+  useInterval(nextSlide, 4000);
 
   return (
     <Grid container>
@@ -56,12 +58,12 @@ export default function Home() {
 
       <Grid
         container
-        spacing={2}
+        spacing={3}
         justify="center"
         style={{
           height: "60vh",
           overflow: "hidden",
-          margin: "10% 0 0 0",
+          margin: "10% 0 0 0"
         }}
       >
         <Grid
@@ -69,7 +71,7 @@ export default function Home() {
           xs={11}
           sm={6}
           md={6}
-          lg={5}
+          lg={4}
           style={{
             display: "flex",
             alignItems: "center",
@@ -87,7 +89,7 @@ export default function Home() {
           xs={11}
           sm={6}
           md={6}
-          lg={5}
+          lg={4}
           style={{
             display: "flex",
             alignItems: "center",
@@ -98,6 +100,7 @@ export default function Home() {
             text={text[currentInd]}
             icon={price}
             currentInd={currentInd}
+
           />
         </Grid>
       </Grid>
@@ -139,7 +142,10 @@ export default function Home() {
         <Icons />
         <ContactForm />
       </ShowFormProvider>
-      <Grid container style={{background:"#f3d549", height:"80vh"}} >
+      <Grid
+        container
+        style={{ background: "#f3d549", height: "80vh", overflow: "hidden" }}
+      >
         <Footer />
       </Grid>
     </Grid>

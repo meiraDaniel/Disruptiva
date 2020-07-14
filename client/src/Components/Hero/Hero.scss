@@ -3,7 +3,7 @@
 .hero-main {
   width: 100%;
   height: 100vh;
-   background: url("../../Images/heroImage.jpg");
+  background: url("../../Images/heroImage.jpg");
   background-position: center;
   background-size: cover;
   display: flex;
@@ -40,6 +40,21 @@
     font-size: 4vh;
     margin: 0;
     word-wrap: break-word;
+    .txt {
+      padding-right: 1%;
+      animation-name: typing;
+      animation-duration: .8s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+  }
+}
+@keyframes typing {
+  from {
+    border-right: 1px white solid;
+  }
+  to {
+    border-right: transparent;
   }
 }
 
