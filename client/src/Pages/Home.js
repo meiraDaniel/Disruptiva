@@ -39,8 +39,8 @@ export default function Home() {
     " 2 Lorem ipsum dolor sit amet.",
     " 3 Lorem ipsum dolor sit amet.",
   ];
-  const nextSlide =  () => {
-     setCurrentInd((state) => (state + 1) % text.length);
+  const nextSlide = () => {
+    setCurrentInd((state) => (state + 1) % text.length);
   };
   useInterval(nextSlide, 4000);
 
@@ -63,7 +63,7 @@ export default function Home() {
         style={{
           height: "60vh",
           overflow: "hidden",
-          margin: "10% 0 0 0"
+          margin: "10% 0 0 0",
         }}
       >
         <Grid
@@ -100,7 +100,6 @@ export default function Home() {
             text={text[currentInd]}
             icon={price}
             currentInd={currentInd}
-
           />
         </Grid>
       </Grid>

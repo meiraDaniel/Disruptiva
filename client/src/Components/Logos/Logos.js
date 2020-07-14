@@ -12,13 +12,12 @@ export default function Logos() {
   const nextSlide = async () => {
     setChecked(true);
 
-    if  (checked) {
+    if (checked) {
       setCurrentInd((state) => (state + 1) % logos.length);
-      await setChecked(false)
+      await setChecked(false);
     }
   };
   useInterval(nextSlide, 3000);
- 
 
   return (
     <div className="logos-main">

@@ -8,25 +8,23 @@
   width: 100%;
   overflow-x: hidden;
   height: 15vh;
-  justify-content:center;
+  justify-content: center;
 }
-
 
 .logos {
   height: 45%;
-    margin-right: 8%;
+  margin-right: 8%;
 }
-@media only screen and (min-width:400px)and (max-width:899px) and (orientation:landscape){
-
+@media only screen and (min-width: 400px) and (max-width: 899px) and (orientation: landscape) {
   .logos {
     height: 80%;
-      margin-right: 15%;
+    margin-right: 15%;
   }
 }
 
-@media only screen and (min-width:900px){
+@media only screen and (min-width: 900px) {
   .logos {
     height: 80%;
-      margin-right: 15%;
+    margin-right: 15%;
   }
 }

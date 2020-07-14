@@ -12,16 +12,8 @@ import saude from "../../Images/logo/saude.png";
 import wellerson from "../../Images/logo/WELLERSON.png";
 
 export const logos = [
- [ meridiano,
-  hangar,
-  kimtara],
-  [edição,
-  wtres,
-  urbaville],
- [ ufmg,
-  patricia,
-  psi,],
-  [rehagro2,
-  saude,
-  wellerson]
+  [meridiano, hangar, kimtara],
+  [edição, wtres, urbaville],
+  [ufmg, patricia, psi],
+  [rehagro2, saude, wellerson],
 ];

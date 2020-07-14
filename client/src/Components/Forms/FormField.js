@@ -18,7 +18,7 @@ const FormField = ({
 
   return (
     <div className={classes[classField]}>
-      <Typography variant="body1" className={classes.inputLabel}>
+      <Typography variant="body2" className={classes.inputLabel}>
         {label}
       </Typography>
       <TextField
@@ -28,6 +28,11 @@ const FormField = ({
         inputRef={register}
         className={classes.inputField}
         fullWidth
+        InputProps={{
+          classes: {
+            input: classes.resize,
+          },
+        }}
         {...props}
       />
       {errors && <p className={classes.errorText}>{errors.message}</p>}
@@ -65,6 +70,10 @@ const useStyles = makeStyles({
     marginBottom: "10%",
     position: "relative",
     width: "100%",
+  },
+  resize: {
+    fontSize: "1rem",
+    lineHeight: "1.5rem",
   },
 });
 

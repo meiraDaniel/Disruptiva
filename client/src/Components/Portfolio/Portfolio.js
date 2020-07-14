@@ -7,6 +7,39 @@ import { makeStyles } from "@material-ui/core/styles";
 import camera from "../../Images/cameraPhoto.png";
 import loading from "../../Images/Icons/loader.svg";
 
+const listaVideos = [
+  {
+    id: 0,
+    idVideo: "XTN3JWzHQeY",
+    name: "SEU DESTINO ESTÁ TRAÇADO. NÃO LUTE CONTRA ELE",
+    urlThumbnail: "https://i.ytimg.com/vi/XTN3JWzHQeY/mqdefault.jpg",
+  },
+  {
+    id: 1,
+    idVideo: "HNHfP0uVKi4",
+    name: "VOCÊ ESTÁ FELIZ NA SUA PROFISSÃO?",
+    urlThumbnail: "https://i.ytimg.com/vi/HNHfP0uVKi4/mqdefault.jpg",
+  },
+  {
+    id: 2,
+    idVideo: "OMM0Hqn4XHw",
+    name: "TUDO QUE VOCE PRECISA SABER PARA AMAR SEM LIMITES",
+    urlThumbnail: "https://i.ytimg.com/vi/OMM0Hqn4XHw/mqdefault.jpg",
+  },
+  {
+    id: 3,
+    idVideo: "1xAHBX-ZSWE",
+    name: "JAMAIS ESCOLHA A MESA NO RESTAURANTE OU NO BAR ANTES DE SABER DISSO",
+    urlThumbnail: "https://i.ytimg.com/vi/1xAHBX-ZSWE/mqdefault.jpg",
+  },
+  {
+    id: 4,
+    idVideo: "mRaIV8IjGRY",
+    name: "VAI MONTAR UM NEGÓCIO? SAIBA QUEM PODE SER SEU SÓCIO",
+    urlThumbnail: "https://i.ytimg.com/vi/mRaIV8IjGRY/mqdefault.jpg",
+  },
+];
+
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -17,6 +50,7 @@ const useStyles = makeStyles((theme) => ({
   image: {
     position: "relative",
     height: 200,
+
     [theme.breakpoints.down("xs")]: {
       width: "100% !important", // Overrides inline-style
       height: 100,
@@ -31,6 +65,8 @@ const useStyles = makeStyles((theme) => ({
       },
       "& $imageTitle": {
         border: "4px solid currentColor",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
       },
     },
   },
@@ -81,6 +117,9 @@ const useStyles = makeStyles((theme) => ({
     left: "calc(50% - 9px)",
     transition: theme.transitions.create("opacity"),
   },
+  imgThumbnail: {
+    backgroundSize: "cover !important",
+  },
 }));
 
 export default function Portfolio() {
@@ -90,14 +129,15 @@ export default function Portfolio() {
   const classes = useStyles();
 
   const getVideoInfos = async () => {
-    const res = await axios.get(`http://localhost:5000/api/youtubeVideos`, {
-      headers: {
-        "Access-Control-Allow-Origin": true,
-        "Content-Type": "application/json",
-      },
-    });
-    setInfoVideos(res.data.videos);
-    setCurrentVideo(res.data.videos[0]);
+    // const res = await axios.get(`http://localhost:5000/api/youtubeVideos`, {
+    //   headers: {
+    //     "Access-Control-Allow-Origin": true,
+    //     "Content-Type": "application/json",
+    //   },
+    // });
+    // console.log(res.data.videos);
+    setInfoVideos(listaVideos);
+    setCurrentVideo(listaVideos[0]);
   };
 
   useEffect(() => {
@@ -132,7 +172,7 @@ export default function Portfolio() {
           xs={3}
           sm={3}
           lg={2}
-          style={{  height: "100%", background: "#e37d4d", padding: "3%" }}
+          style={{ height: "100%", background: "#e37d4d", padding: "3%" }}
         >
           <Grid item xs={10}>
             <Typography variant="h5" color="primary">
@@ -143,33 +183,35 @@ export default function Portfolio() {
             <Typography variant="body2">Lorem ipsum dolor sit amet</Typography>
           </Grid>
         </Grid>
-        <Grid item xs={9}  lg={10} style={{   height: "100%",display: "flex" }}>
+        <Grid item xs={9} lg={10} style={{ height: "100%", display: "flex" }}>
           {playlistVideos.map((data, i) => (
             <Grid
               xs={3}
               onClick={() => handleSelectVideo(data)}
               key={i}
               item
+              className={classes.imgThumbnail}
               style={{
                 background: `url(${data.urlThumbnail}`,
-                backgroundPosition: "center center",
                 backgroundSize: "cover",
-                backgroundRepeat:"no-repeat",
-                cursor:"pointer",
-           
+                cursor: "pointer",
               }}
             ></Grid>
           ))}
         </Grid>
       </Grid>
 
-      <Grid container justify="center" style={{ height: "70%", marginTop:"5%"}}>
+      <Grid
+        container
+        justify="center"
+        style={{ height: "70%", marginTop: "5%" }}
+      >
         {currentVideo ? (
-          <Grid item xs={12} sm={8} style={{ height: "90%", zIndex:"9"}}>
+          <Grid item xs={12} sm={8} style={{ height: "90%" }}>
             <VideoPlayer video={currentVideo} />
           </Grid>
         ) : (
-          <Grid item xs={12} sm={6} style={{ height: "90%", zIndex:"9"}}>
+          <Grid item xs={12} sm={6} style={{ height: "90%" }}>
             <img
               src={loading}
               alt="placeholder"
