@@ -7,7 +7,6 @@
 }
 .card-container {
   height: 100%;
-
 }
 .card-image {
   height: 90%;
@@ -18,12 +17,10 @@
 .card-text {
   display: flex;
   flex-wrap: wrap;
-  overflow: hidden;
+  // overflow: hidden;
   height: 80%;
   padding: 1%;
-  align-items:center;
-
-
+  align-items: center;
 }
 
 .card-carrosel {
@@ -54,13 +51,12 @@
   display: flex;
 }
 
-
-@media only screen and (min-width: 600px) and (orientation:landscape){
+@media only screen and (min-width: 600px) and (orientation: landscape) {
   .card {
     height: 60%;
   }
 }
-@media only screen and (min-width: 600px) and (orientation:portrait){
+@media only screen and (min-width: 600px) and (orientation: portrait) {
   .card {
     height: 50%;
   }

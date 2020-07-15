@@ -51,7 +51,7 @@ export default function Home() {
           <Navegation />
         </Grid>
         <Hero />
-        <Grid item xs={12} style={{ height: "20%" }}>
+        <Grid item xs={12} style={{ height: "50vh", display: "block" }}>
           <Logo />
         </Grid>
       </Grid>
@@ -62,7 +62,6 @@ export default function Home() {
         justify="center"
         style={{
           height: "60vh",
-          overflow: "hidden",
           margin: "10% 0 0 0",
         }}
       >
