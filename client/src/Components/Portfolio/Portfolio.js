@@ -10,33 +10,34 @@ import loading from "../../Images/Icons/loader.svg";
 const listaVideos = [
   {
     id: 0,
-    idVideo: "XTN3JWzHQeY",
-    name: "SEU DESTINO ESTÁ TRAÇADO. NÃO LUTE CONTRA ELE",
-    urlThumbnail: "https://i.ytimg.com/vi/XTN3JWzHQeY/mqdefault.jpg",
+    idVideo: "WYTkAwprLec",
+    name:
+      "VIDEO EM MOTION GRAPHICS DOMINGO11H11   CLIENTE KIMTARA NUMEROLOGIA 1",
+    urlThumbnail: "https://i.ytimg.com/vi/WYTkAwprLec/mqdefault.jpg",
   },
   {
     id: 1,
-    idVideo: "HNHfP0uVKi4",
-    name: "VOCÊ ESTÁ FELIZ NA SUA PROFISSÃO?",
-    urlThumbnail: "https://i.ytimg.com/vi/HNHfP0uVKi4/mqdefault.jpg",
+    idVideo: "vAU4GlksQNo",
+    name: "Corpo clinico de Cirurgia Cardiovascular   Hospital Madre Teresa",
+    urlThumbnail: "https://i.ytimg.com/vi/vAU4GlksQNo/mqdefault.jpg",
   },
   {
     id: 2,
-    idVideo: "OMM0Hqn4XHw",
-    name: "TUDO QUE VOCE PRECISA SABER PARA AMAR SEM LIMITES",
-    urlThumbnail: "https://i.ytimg.com/vi/OMM0Hqn4XHw/mqdefault.jpg",
+    idVideo: "d5kdwQ_GTwY",
+    name: "A Noiva quer",
+    urlThumbnail: "https://i.ytimg.com/vi/d5kdwQ_GTwY/mqdefault.jpg",
   },
   {
     id: 3,
-    idVideo: "1xAHBX-ZSWE",
-    name: "JAMAIS ESCOLHA A MESA NO RESTAURANTE OU NO BAR ANTES DE SABER DISSO",
-    urlThumbnail: "https://i.ytimg.com/vi/1xAHBX-ZSWE/mqdefault.jpg",
+    idVideo: "jkrAp93Zdn4",
+    name: "360 Meridianos   Serra da Capivara",
+    urlThumbnail: "https://i.ytimg.com/vi/jkrAp93Zdn4/mqdefault.jpg",
   },
   {
     id: 4,
-    idVideo: "mRaIV8IjGRY",
-    name: "VAI MONTAR UM NEGÓCIO? SAIBA QUEM PODE SER SEU SÓCIO",
-    urlThumbnail: "https://i.ytimg.com/vi/mRaIV8IjGRY/mqdefault.jpg",
+    idVideo: "HGlYErdUdfI",
+    name: "Video institucional   W3 Uniformes",
+    urlThumbnail: "https://i.ytimg.com/vi/HGlYErdUdfI/mqdefault.jpg",
   },
 ];
 
@@ -135,7 +136,6 @@ export default function Portfolio() {
     //     "Content-Type": "application/json",
     //   },
     // });
-    // console.log(res.data.videos);
     setInfoVideos(listaVideos);
     setCurrentVideo(listaVideos[0]);
   };
@@ -145,7 +145,6 @@ export default function Portfolio() {
   }, []);
 
   useEffect(() => {
-    console.log(infoVideos);
     if (infoVideos && currentVideo) {
       const filteredVideos = infoVideos.filter(
         (data) => data.id !== currentVideo.id
