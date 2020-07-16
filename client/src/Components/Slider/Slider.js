@@ -69,6 +69,7 @@ const Slider = (props) => {
   useEffect(() => {
     if (transition === 0) setState({ ...state, transition: 0.45 });
     if (translate > getWidth()) setState({ ...state, translate: getWidth() });
+    console.log(translate);
   }, [transition]);
 
   const handleResize = () => {
