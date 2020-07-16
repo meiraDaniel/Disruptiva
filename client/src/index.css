@@ -1,6 +1,18 @@
+@font-face {
+  font-family: 'Futura_Bold';
+  src: local('Futura'), url('./futura_md_bt/FuturaBoldBT.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Futura_Md';
+  src: local('Futura'), url('./futura_md_bt/FuturaMediumBT.ttf') format('truetype');
+}
+
+
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: -apple-system, BlinkMacSystemFont, 'Futura_Md', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;

@@ -1,0 +1,34 @@
+@import "../../global.scss";
+
+.disable-background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $preto;
+  opacity: 0.5;
+}
+
+.open-form-enter {
+  transform: translateY(100%);
+  opacity: 0;
+  position: absolute;
+}
+.open-form-enter-active {
+  position: absolute;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 800ms ease;
+}
+.open-form-exit {
+  position: absolute;
+  opacity: 1;
+  transform: translateY(0);
+}
+.open-form-exit-active {
+  position: absolute;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 800ms ease;
+}

@@ -1,0 +1,52 @@
+@import "../../global.scss";
+
+.icons-main {
+  display: flex;
+  position: fixed;
+  align-items:center;
+  justify-content:center;
+  top: 90%;
+  left: 60%;
+  width: 40%;
+  height: 10%;
+  cursor:pointer;
+}
+
+.icon-size {
+  margin: 1%;
+  height: 60%;
+  img {
+    height: 100%;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px) and (orientation: portrait) {
+  .icons-main {
+    left: 80%;
+    width: 20%;
+    height: 10%;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 900px) and (orientation: landscape) {
+  .icons-main {
+    left: 90%;
+    width: 10%;
+  }
+  .icon-size {
+    margin: 1%;
+    height: 80%;
+    
+  }
+}
+
+@media only screen and (min-width: 901px) {
+  .icons-main {
+    left: 90%;
+    width: 10%;
+  }
+
+  .icon-size {
+    margin: 1%;
+    height: 70%;}
+  
+}
