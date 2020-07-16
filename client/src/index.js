@@ -62,8 +62,10 @@ const theme = createMuiTheme({
       },
     },
     body2: {
-      fontSize: "0.8rem",
-
+      fontSize: "0.7rem",
+      "@media (min-width:600px) and (orientation:landscape) and (max-width:900px)": {
+        fontSize: "0.7rem",
+      },
       "@media (min-width:600px) and (orientation:portrait) and (max-width:900px)": {
         fontSize: "1.5rem",
       },

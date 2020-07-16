@@ -21,7 +21,7 @@ export default function Presentation({ title, text, photo, id }) {
       alignItems="center"
       style={{ height: "100%"}}
     >
-      <Grid item xs={11} sm={5} lg={5}   className="text-presentation">
+      <Grid item xs={11} sm={6} lg={5}   className="text-presentation">
         <Grid
           item
           xs={12}
@@ -33,7 +33,7 @@ export default function Presentation({ title, text, photo, id }) {
         <Grid
           item
           xs={12}
-          sm={11}
+          sm={12}
           className="subtitle-presentation"
          
         >

@@ -22,6 +22,9 @@ import ShowFormProvider from "../Context/ShowForm";
 const useStyles = makeStyles({
   marginPresentation: {
     margin: "20% 0 3% 0",
+    "@media (min-width:600px) and (max-width:900px) and (orientation:landscape)": {
+      margin: "30% 0 3% 0",
+    },
     "@media (min-width:600px) and (max-width:900px) and (orientation:portrait)": {
       margin: "20% 0 3% 0",
     },
@@ -39,8 +42,12 @@ const useStyles = makeStyles({
   },
   footer:{
     background: "#f3d549",
-     height: "80vh", 
+     height: "50vh", 
      overflow: "hidden",
+     "@media (min-width:600px) and (max-width:901px)": {
+      height: "80vh", 
+ 
+    },
       "@media (min-width:901px)": {
         height: "60vh", 
        
@@ -61,7 +68,7 @@ export default function Home() {
   return (
     <Grid container>
       <Grid container style={{ height: "100vh" }}>
-        <Grid item xs={12} style={{ height: "10%", position: "absolute" }}>
+        <Grid item xs={12} style={{ height: "13%", position: "absolute" }}>
           <Navegation />
         </Grid>
         <Hero />
