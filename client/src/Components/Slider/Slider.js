@@ -33,10 +33,8 @@ const Slider = (props) => {
   });
 
   useEffect(() => {
-    console.log("use 1");
     const play = () => {
       autoPlayRef.current();
-      console.log("play 1");
     };
 
     const smooth = (e) => {
@@ -51,8 +49,8 @@ const Slider = (props) => {
       console.log("resize 1");
     };
 
-    const transitionEnd = window.addEventListener("transitionend", smooth);
     const onResize = window.addEventListener("resize", resize);
+    const transitionEnd = window.addEventListener("transitionend", smooth);
 
     let interval = null;
 
@@ -89,7 +87,6 @@ const Slider = (props) => {
     // Create an array of the previous last slide, and the next two slides that follow it.
     else _slides = slides.slice(activeSlide - 1, activeSlide + 2);
 
-    console.log("nãio entra aqui");
     setState({
       ...state,
       _slides,
