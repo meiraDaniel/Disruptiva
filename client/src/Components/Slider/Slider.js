@@ -38,10 +38,7 @@ const Slider = (props) => {
     };
 
     const smooth = (e) => {
-      console.log("smoth 1");
-      if (e.target.className.includes("SliderContent")) {
-        transitionRef.current();
-      }
+      transitionRef.current();
     };
 
     const resize = () => {
