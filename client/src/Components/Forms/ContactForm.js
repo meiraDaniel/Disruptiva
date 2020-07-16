@@ -148,6 +148,13 @@ const useStyles = makeStyles({
       backgroundColor: colors.rosa,
     },
   },
+  "@media (orientation:landscape) and (max-height: 900px)": {
+    container: {
+      height: "90%",
+      overflowX: "hidden",
+      overflowY: "auto",
+    },
+  },
 });
 
 export default ContactForm;
