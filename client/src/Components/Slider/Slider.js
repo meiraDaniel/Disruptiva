@@ -27,7 +27,8 @@ const Slider = (props) => {
   const resizeRef = useRef();
 
   useEffect(() => {
-    if (translate > getWidth()) setState({ ...state, translate: getWidth() });
+    if (translate > getWidth())
+      setState({ ...state, translate: translate + getWidth() });
     console.log(translate);
     autoPlayRef.current = nextSlide;
     transitionRef.current = smoothTransition;
