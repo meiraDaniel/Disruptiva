@@ -48,6 +48,7 @@ const Slider = (props) => {
 
     const resize = () => {
       resizeRef.current();
+      console.log("resize 1");
     };
 
     const transitionEnd = window.addEventListener("transitionend", smooth);
