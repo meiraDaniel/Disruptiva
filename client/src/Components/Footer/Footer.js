@@ -1,6 +1,6 @@
 import React from "react";
 
-import logo from "../../Images/logo_preto.svg";
+import logo from "../../Images/LOGO_DISRUPTIVA_NOVA_BRANCA.svg";
 import "./Footer.scss";
 import { Grid, Typography } from "@material-ui/core";
 import { social } from "../../Helpers/socialMedia";

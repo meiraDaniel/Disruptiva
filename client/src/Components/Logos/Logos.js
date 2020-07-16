@@ -4,8 +4,10 @@ import "./Logos.scss";
 import Slider from "../Slider/Slider";
 
 export default function Logos() {
+
+
   return (
-    <div style={{ marginBottom: "100px" }}>
+    <div >
       <Slider slides={logos} autoPlay={5} />;
     </div>
   );

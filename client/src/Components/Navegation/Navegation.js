@@ -19,7 +19,7 @@ export default function Navegation() {
           <a onClick={() => set(false)} href="#quemescreve">
             Quem escreve
           </a>
-          <a onClick={() => set(false)} href="#quemescreve">
+          <a onClick={() => set(false)} href="#portfolio">
             Portfólio
           </a>
         </ul>

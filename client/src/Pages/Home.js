@@ -8,7 +8,7 @@ import camera from "../Images/Icons/camera.svg";
 import price from "../Images/Icons/price.svg";
 import useInterval from "react-useinterval";
 import Presentation from "../Components/Presentation/Presentation";
-import PresentationSecond from "../Components/Presentation/PresentationSecond";
+import{text,text2} from "./services"
 import Portfolio from "../Components/Portfolio/Portfolio";
 import cameraPhoto from "../Images/rosinha2.png";
 import Ariane from "../Images/Ariane.png";
@@ -21,24 +21,38 @@ import ShowFormProvider from "../Context/ShowForm";
 
 const useStyles = makeStyles({
   marginPresentation: {
-    margin: "30% 0 3% 0",
+    margin: "20% 0 3% 0",
     "@media (min-width:600px) and (max-width:900px) and (orientation:portrait)": {
-      margin: "6% 0 3% 0",
+      margin: "20% 0 3% 0",
     },
     "@media (min-width:900px)": {
-      margin: "10% 0 3% 0",
+      margin: "15% 0 3% 0",
     },
   },
+  logos: {
+    height: "50vh",
+    display: "block",
+    position: "absolute",
+    top: "90%",
+    overflow: "hidden",
+    marginBottom: "15%",
+  },
+  footer:{
+    background: "#f3d549",
+     height: "80vh", 
+     overflow: "hidden",
+      "@media (min-width:901px)": {
+        height: "60vh", 
+       
+      },
+  }
+
 });
 
 export default function Home() {
   const classes = useStyles();
   const [currentInd, setCurrentInd] = useState(0);
-  const text = [
-    "1 Lorem ipsum dolor sit amet.",
-    " 2 Lorem ipsum dolor sit amet.",
-    " 3 Lorem ipsum dolor sit amet.",
-  ];
+
   const nextSlide = () => {
     setCurrentInd((state) => (state + 1) % text.length);
   };
@@ -51,7 +65,7 @@ export default function Home() {
           <Navegation />
         </Grid>
         <Hero />
-        <Grid item xs={12} style={{ height: "50vh", display: "block" }}>
+        <Grid item xs={12} className={classes.logos}>
           <Logo />
         </Grid>
       </Grid>
@@ -70,14 +84,14 @@ export default function Home() {
           xs={11}
           sm={6}
           md={6}
-          lg={4}
+          lg={5}
           style={{
             display: "flex",
             alignItems: "center",
           }}
         >
           <Card
-            title="Diferenciais"
+            title="Consultoria"
             text={text[currentInd]}
             icon={camera}
             currentInd={currentInd}
@@ -88,30 +102,35 @@ export default function Home() {
           xs={11}
           sm={6}
           md={6}
-          lg={4}
+          lg={5}
           style={{
             display: "flex",
             alignItems: "center",
           }}
         >
           <Card
-            title="Serviços"
-            text={text[currentInd]}
+            title="Produção"
+            text={text2[currentInd]}
             icon={price}
             currentInd={currentInd}
           />
         </Grid>
       </Grid>
       <Grid container style={{ overflow: "hidden" }}>
-        <Grid item style={{ height: "75vh", margin: "3% 0 3% 0" }}>
+        <Grid
+          id="quemescreve"
+          item
+          style={{ height: "75vh", margin: "3% 0 3% 0" }}
+        >
           <Presentation
             title="Quem escreve?"
-            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo in nibh faucibus purus id sit tortor arcu eu. Quam sed in sed sit in feugiat risus non porta. Nibh nulla at cras in phasellus tincidunt euismod sit. Viverra in sit vestibulum, justo mauris id ultricies proin massa.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo in nibh faucibus purus id sit tortor arcu eu. Quam sed in sed sit in feugiat risus non porta. Nibh nulla at cras in phasellus tincidunt euismod sit. Viverra in sit vestibulum, justo mauris id ultricies proin massa."
+            text="Meu nome é Ariane Gervásio. Sou jornalista com pós-graduação em Marketing Digital e Relações Internacionais. Já atuei na área administrativa, assessoria de comunicação, internacional e no marketing de empresas como Instituto Embelleze e Samtek. Durante 8 anos trabalhei em televisão nos setores de produção, reportagem, edição de imagens, coordenação de programa e CEDOC – fui responsável pela criação do arquivo audiovisual da emissora. A Disruptiva é um sonho que se tornou realidade com duas coisas que eu amo: marketing e vídeo. Não faço isso sozinha, mas com finalistas, editores, cinegrafistas e roteiristas parceiros.
+            "
             photo={Ariane}
-            id="quemescreve"
           />
         </Grid>
         <Grid
+          id="portfolio"
           item
           style={{
             background: "#F3D549",
@@ -123,6 +142,7 @@ export default function Home() {
           <Portfolio />
         </Grid>
         <Grid
+          id="quemsomos"
           item
           className={classes.marginPresentation}
           style={{ height: "75vh" }}
@@ -131,7 +151,6 @@ export default function Home() {
             title="Quem somos?"
             text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo in nibh faucibus purus id sit tortor arcu eu. Quam sed in sed sit in feugiat risus non porta. Nibh nulla at cras in phasellus tincidunt euismod sit. Viverra in sit vestibulum, justo mauris id ultricies proin massa.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo in nibh faucibus purus id sit tortor arcu eu. Quam sed in sed sit in feugiat risus non porta. Nibh nulla at cras in phasellus tincidunt euismod sit. Viverra in sit vestibulum, justo mauris id ultricies proin massa."
             photo={cameraPhoto}
-            id="quemsomos"
           />
         </Grid>
       </Grid>
@@ -142,7 +161,7 @@ export default function Home() {
       </ShowFormProvider>
       <Grid
         container
-        style={{ background: "#f3d549", height: "60vh", overflow: "hidden" }}
+        className={classes.footer}
       >
         <Footer />
       </Grid>

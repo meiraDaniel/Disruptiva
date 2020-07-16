@@ -81,7 +81,6 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
     color: theme.palette.common.white,
-    cursor: "pointer",
   },
   imageSrc: {
     position: "absolute",
@@ -107,6 +106,8 @@ const useStyles = makeStyles((theme) => ({
     padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${
       theme.spacing(1) + 6
     }px`,
+        cursor: "pointer",
+
   },
   imageMarked: {
     height: 3,
@@ -180,7 +181,7 @@ export default function Portfolio() {
             </Typography>
           </Grid>
           <Grid item xs={10}>
-            <Typography variant="body2">Lorem ipsum dolor sit amet</Typography>
+            <Typography variant="subtitle1">Lorem ipsum dolor sit amet</Typography>
           </Grid>
         </Grid>
         <Grid item xs={9} lg={10} style={{ height: "100%", display: "flex" }}>

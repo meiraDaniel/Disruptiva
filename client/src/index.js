@@ -41,12 +41,12 @@ const theme = createMuiTheme({
     },
     body1: {
       color:"white",
-      fontSize: "1.3rem",
+      fontSize: "1rem",
       "@media (min-width:600px) and (orientation:portrait) and (max-width:900px)": {
         fontSize: "1.5rem",
       },
       "@media (min-width:901px)": {
-        fontSize: "2.3rem",
+        fontSize: "2rem",
        
       },
     },
@@ -57,7 +57,7 @@ const theme = createMuiTheme({
         fontSize: "1.5rem",
       },
       "@media (min-width:901px)": {
-        fontSize: "2.3rem",
+        fontSize: "1.8rem",
        
       },
     },
@@ -76,14 +76,20 @@ const theme = createMuiTheme({
       fontSize: "1rem",
       fontWeight:"700",
       "@media (min-width:600px) and (max-width:900px)": {
-        fontSize: "2rem",
+        fontSize: "1.2rem",
       },
       "@media (min-width:901px)": {
-        fontSize: "3rem",
+        fontSize: "2rem",
        
       },
+    },
+    subtitle1:{
+      color:"white",
+      fontSize: "0.8rem",
+
     }
   },
+ 
 });
 
 ReactDOM.render(

@@ -26,7 +26,7 @@ export default function Card({ title, text, icon, currentInd, flag }) {
               textAlign: "center",
             }}
           >
-            <Typography variant="h3" color="primary">
+            <Typography variant="h5" color="primary">
               {title}
             </Typography>
           </Grid>
@@ -48,6 +48,9 @@ export default function Card({ title, text, icon, currentInd, flag }) {
               &#9900;
             </span>
             <span className={currentInd === 2 ? "color_red" : "color_white"}>
+              &#9900;
+            </span>
+            <span className={currentInd === 3? "color_red" : "color_white"}>
               &#9900;
             </span>
           </Grid>

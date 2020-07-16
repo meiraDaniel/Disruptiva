@@ -21,7 +21,7 @@ export default function Presentation({ title, text, photo, id }) {
       alignItems="center"
       style={{ height: "100%"}}
     >
-      <Grid item xs={12} sm={5} lg={4}   className="text-presentation">
+      <Grid item xs={11} sm={5} lg={5}   className="text-presentation">
         <Grid
           item
           xs={12}
@@ -40,7 +40,7 @@ export default function Presentation({ title, text, photo, id }) {
           <Typography variant="body2">{text}</Typography>
         </Grid>
       </Grid>
-      <Grid item xs={12} sm={6} lg={4} className="image-presentation">
+      <Grid item xs={10} sm={6} lg={4} className="image-presentation">
         <img src={photo} alt="team" />
       </Grid>
     </Grid>
