@@ -72,8 +72,13 @@ const useStyles = makeStyles({
     width: "100%",
   },
   resize: {
-    fontSize: "1rem",
+    fontSize: "1.2rem",
     lineHeight: "1.5rem",
+  },
+  "@media (max-height: 700px)": {
+    resize: {
+      fontSize: "0.8rem",
+    },
   },
 });
 

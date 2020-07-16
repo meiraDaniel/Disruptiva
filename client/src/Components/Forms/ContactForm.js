@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers";
 import { CSSTransition } from "react-transition-group";
@@ -22,6 +22,7 @@ function ContactForm() {
   });
 
   const { showForm, setShowForm } = useShowForm();
+  const windowHeight = window.innerHeight;
 
   const node = useRef();
   const classes = useStyles();
@@ -88,7 +89,7 @@ function ContactForm() {
               register={register}
               errors={errors.textMessage}
               multiline={true}
-              rows={8}
+              rows={5}
             />
 
             <div className={classes.btnContainer}>
@@ -131,7 +132,6 @@ const useStyles = makeStyles({
   grid: {
     display: "flex",
     justifyContent: "space-between",
-    height: "100%",
     marginBottom: "10%",
   },
   btnContainer: {
