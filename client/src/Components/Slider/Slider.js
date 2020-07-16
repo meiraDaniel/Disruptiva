@@ -119,6 +119,8 @@ const Slider = (props) => {
         transition={transition}
         width={getWidth() * _slides.length}
       >
+        {console.log("translate" + translate)}
+        {console.log("get width" + getWidth())}
         {_slides.map((_slide, i) => {
           return (
             <Slide key={_slide + i} content={_slide} size={widthCarousel} />
