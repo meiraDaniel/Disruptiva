@@ -40,9 +40,6 @@ const Slider = (props) => {
     const smooth = (e) => {
       if (e.target.className.includes("SliderContent")) {
         transitionRef.current();
-        if (translate > getWidth())
-          setState({ ...state, translate: translate - getWidth() });
-        console.log(translate);
       }
     };
 
@@ -99,7 +96,10 @@ const Slider = (props) => {
   const nextSlide = () =>
     setState({
       ...state,
-      translate: translate + getWidth(),
+      translate:
+        translate > getWidth()
+          ? console.log(translate)
+          : translate + getWidth(),
       activeSlide: activeSlide === slides.length - 1 ? 0 : activeSlide + 1,
     });
 
