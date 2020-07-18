@@ -107,8 +107,7 @@ const useStyles = makeStyles((theme) => ({
     padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${
       theme.spacing(1) + 6
     }px`,
-        cursor: "pointer",
-
+    cursor: "pointer",
   },
   imageMarked: {
     height: 3,
@@ -164,7 +163,7 @@ export default function Portfolio() {
       <Grid
         container
         style={{
-          height: "20%",
+          height: "25%",
         }}
       >
         <Grid
@@ -180,7 +179,9 @@ export default function Portfolio() {
             </Typography>
           </Grid>
           <Grid item xs={10}>
-            <Typography variant="subtitle1">Lorem ipsum dolor sit amet</Typography>
+            <Typography variant="subtitle1">
+              Lorem ipsum dolor sit amet
+            </Typography>
           </Grid>
         </Grid>
         <Grid item xs={9} lg={10} style={{ height: "100%", display: "flex" }}>
@@ -204,10 +205,10 @@ export default function Portfolio() {
       <Grid
         container
         justify="center"
-        style={{ height: "70%", marginTop: "5%" }}
+        style={{ height: "65%", marginTop: "5%" }}
       >
         {currentVideo ? (
-          <Grid item xs={12} sm={8} style={{ height: "90%" }}>
+          <Grid item xs={12} sm={10}  lg={8} style={{ height: "90%" }}>
             <VideoPlayer video={currentVideo} />
           </Grid>
         ) : (
@@ -254,7 +255,16 @@ export default function Portfolio() {
               color="inherit"
               className={classes.imageTitle}
             >
-              Acesse a Playlist
+              <a
+                            className='acessePlayslit'
+
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.youtube.com/playlist?list=PLPTwwbrJNg5Bs659JJYqVeR4vQlDTe3rD"
+              >
+                {" "}
+                Acesse a Playlist
+              </a>
               <span className={classes.imageMarked} />
             </Typography>
           </span>

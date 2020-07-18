@@ -13,6 +13,8 @@ const Slider = (props) => {
   const secondSlide = slides[1];
   const lastSlide = slides[slides.length - 1];
 
+  const [widthCarousel, setWidthCarousel] = useState(0);
+
   const [state, setState] = useState({
     activeSlide: 0,
     translate: getWidth(),
@@ -25,6 +27,7 @@ const Slider = (props) => {
   const autoPlayRef = useRef();
   const transitionRef = useRef();
   const resizeRef = useRef();
+  const sliderRef = useRef();
 
   useEffect(() => {
     autoPlayRef.current = nextSlide;
@@ -33,6 +36,8 @@ const Slider = (props) => {
   });
 
   useEffect(() => {
+    setWidthCarousel(sliderRef.current.offsetWidth);
+
     const play = () => {
       autoPlayRef.current();
     };
@@ -43,11 +48,10 @@ const Slider = (props) => {
 
     const resize = () => {
       resizeRef.current();
-      console.log("resize 1");
     };
 
-    const onResize = window.addEventListener("resize", resize);
     const transitionEnd = window.addEventListener("transitionend", smooth);
+    const onResize = window.addEventListener("resize", resize);
 
     let interval = null;
 
@@ -107,14 +111,16 @@ const Slider = (props) => {
     });
 
   return (
-    <div css={SliderCSS}>
+    <div css={SliderCSS} ref={sliderRef}>
       <SliderContent
         translate={translate}
         transition={transition}
         width={getWidth() * _slides.length}
       >
         {_slides.map((_slide, i) => {
-          return <Slide key={_slide + i} content={_slide} />;
+          return (
+            <Slide key={_slide + i} content={_slide} size={widthCarousel} />
+          );
         })}
       </SliderContent>
     </div>

@@ -15,7 +15,7 @@
   transition: 0.3 ease;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 900px) {
   .images-footer {
     height: 100%;
     img{
@@ -23,8 +23,8 @@
     }
   }
   .logo_footer {
-    width: 70%;
-    height: 70%;
+    width: 90%;
+    height: 90%;
     opacity: 1;
     transition: 0.3 ease;
   }

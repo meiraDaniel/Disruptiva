@@ -8,7 +8,7 @@ export default function Logos() {
 
   return (
     <div >
-      <Slider slides={logos} autoPlay={5} />;
+      <Slider slides={logos} autoPlay={5} />
     </div>
   );
 }

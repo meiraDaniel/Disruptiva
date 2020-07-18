@@ -8,10 +8,10 @@ export default function Navegation() {
 
   return (
     <Grid container alignItems="center" style={{ height:"100%"}}>
-      <Grid item xs={3} sm={1} style={{ height:"100%"}}>
+      <Grid item xs={3} sm={2} md={1}  style={{ height:"100%"}}>
         <img className="logo" src={logo} alt="disruptiva" />
       </Grid>
-      <Grid item xs={7} sm={10} style={{height:"100%"}}>
+      <Grid item xs={7} sm={8} md={10} style={{height:"100%"}}>
         <ul className={!flag ? "display_none" : "navegation"}>
           <a onClick={() => set(false)} href="#quemsomos">
             Quem somos
@@ -28,7 +28,8 @@ export default function Navegation() {
       <Grid
         item
         xs={2}
-        sm={1}
+        sm={2}
+        md={0}
         style={{height:"100%"}}
         onClick={() => set(!flag)}
         className={!flag ? "hamburguer--menu" : "hamburguer--menu-close"}

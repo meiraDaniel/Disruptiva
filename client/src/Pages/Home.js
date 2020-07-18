@@ -8,7 +8,7 @@ import camera from "../Images/Icons/camera.svg";
 import price from "../Images/Icons/price.svg";
 import useInterval from "react-useinterval";
 import Presentation from "../Components/Presentation/Presentation";
-import{text,text2} from "./services"
+import { text, text2 } from "./services";
 import Portfolio from "../Components/Portfolio/Portfolio";
 import cameraPhoto from "../Images/rosinha2.png";
 import Ariane from "../Images/Ariane.png";
@@ -21,15 +21,16 @@ import ShowFormProvider from "../Context/ShowForm";
 
 const useStyles = makeStyles({
   marginPresentation: {
-    margin: "20% 0 3% 0",
+    height: "85vh",
+    margin: "20% 5% 3% 5% ",
     "@media (min-width:600px) and (max-width:900px) and (orientation:landscape)": {
-      margin: "30% 0 3% 0",
+      margin: "30% 5%  3% 5% ",
     },
     "@media (min-width:600px) and (max-width:900px) and (orientation:portrait)": {
-      margin: "20% 0 3% 0",
+      margin: "20% 5%  3% 5% ",
     },
     "@media (min-width:900px)": {
-      margin: "15% 0 3% 0",
+      margin: "15% 5%  3% 5% ",
     },
   },
   logos: {
@@ -40,20 +41,32 @@ const useStyles = makeStyles({
     overflow: "hidden",
     marginBottom: "15%",
   },
-  footer:{
+  footer: {
     background: "#f3d549",
-     height: "50vh", 
-     overflow: "hidden",
-     "@media (min-width:600px) and (max-width:901px)": {
-      height: "80vh", 
- 
+    height: "50vh",
+    overflow: "hidden",
+    "@media (min-width:600px) and (max-width:901px)": {
+      height: "50vh",
     },
-      "@media (min-width:901px)": {
-        height: "60vh", 
-       
-      },
-  }
+    "@media (min-width:901px)": {
+      height: "60vh",
+    },
+  },
+  navegation:{
+    height: "10%", 
+    position: "absolute" ,
+        "@media (min-width:450px) and (max-width:599px)": {
+          height: "15%", 
 
+        },
+    "@media (min-width:600px) and (max-width:901px)": {
+      height: "13%", 
+    },
+    "@media (min-width:901px)": {
+      height: "13%", 
+      
+    },
+  }
 });
 
 export default function Home() {
@@ -68,7 +81,7 @@ export default function Home() {
   return (
     <Grid container>
       <Grid container style={{ height: "100vh" }}>
-        <Grid item xs={12} style={{ height: "13%", position: "absolute" }}>
+        <Grid item xs={12} className={classes.navegation}>
           <Navegation />
         </Grid>
         <Hero />
@@ -127,7 +140,7 @@ export default function Home() {
         <Grid
           id="quemescreve"
           item
-          style={{ height: "75vh", margin: "3% 0 3% 0" }}
+          style={{ height: "85vh", margin: "3% 5% 3% 5%" }}
         >
           <Presentation
             title="Quem escreve?"
@@ -152,7 +165,7 @@ export default function Home() {
           id="quemsomos"
           item
           className={classes.marginPresentation}
-          style={{ height: "75vh" }}
+         
         >
           <Presentation
             title="Quem somos?"
@@ -166,10 +179,7 @@ export default function Home() {
         <Icons />
         <ContactForm />
       </ShowFormProvider>
-      <Grid
-        container
-        className={classes.footer}
-      >
+      <Grid container className={classes.footer}>
         <Footer />
       </Grid>
     </Grid>

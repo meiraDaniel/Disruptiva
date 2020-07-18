@@ -28,70 +28,65 @@ const theme = createMuiTheme({
     },
 
     h3: {
-      fontWeight:"700",
+      fontWeight: "700",
       fontSize: "1.2rem",
       "@media (min-width:600px) and (max-width:900px)": {
         fontSize: "1.8rem",
-       
       },
       "@media (min-width:901px)": {
         fontSize: "1.8rem",
-       
       },
     },
     body1: {
-      color:"white",
+      color: "white",
       fontSize: "1rem",
       "@media (min-width:600px) and (orientation:portrait) and (max-width:900px)": {
         fontSize: "1.5rem",
       },
       "@media (min-width:901px)": {
-        fontSize: "2rem",
-       
+        fontSize: "1.7rem",
       },
     },
     h4: {
-      fontWeight:"700",
+      fontWeight: "700",
       fontSize: "1.6rem",
       "@media (min-width:600px) and (orientation:portrait) and (max-width:900px)": {
-        fontSize: "1.5rem",
+        fontSize: "1.6rem",
       },
       "@media (min-width:901px)": {
         fontSize: "1.8rem",
-       
       },
     },
     body2: {
       fontSize: "0.7rem",
       "@media (min-width:600px) and (orientation:landscape) and (max-width:900px)": {
-        fontSize: "0.7rem",
+        fontSize: "1rem",
       },
       "@media (min-width:600px) and (orientation:portrait) and (max-width:900px)": {
-        fontSize: "1.5rem",
+        fontSize: "1.3rem",
       },
       "@media (min-width:901px)": {
         fontSize: "1.2rem",
-       
       },
     },
-    h5:{
+    h5: {
       fontSize: "1rem",
-      fontWeight:"700",
+      fontWeight: "700",
       "@media (min-width:600px) and (max-width:900px)": {
-        fontSize: "1.2rem",
+        fontSize: "1.4rem",
       },
       "@media (min-width:901px)": {
         fontSize: "2rem",
-       
       },
     },
-    subtitle1:{
-      color:"white",
+    subtitle1: {
+      color: "white",
       fontSize: "0.8rem",
-
-    }
+      "@media (min-width:600px) and (max-width:900px)": {
+        fontSize: "1.2rem",
+      },
+    },
   },
- 
 });
 
 ReactDOM.render(

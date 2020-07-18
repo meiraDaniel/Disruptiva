@@ -148,7 +148,7 @@ const useStyles = makeStyles({
       backgroundColor: colors.rosa,
     },
   },
-  "@media (orientation:landscape) and (max-height: 900px)": {
+  "@media (orientation:landscape) and (max-height: 600px)": {
     container: {
       height: "90%",
       overflowX: "hidden",

@@ -6,13 +6,14 @@ export default function Card({ title, text, icon, currentInd, flag }) {
   return (
     <Paper elevation={3} className="card" style={{ background: "#E37D4D" }}>
       <Grid container className="card-container">
-        <Grid item xs={5} className="card-image">
+        <Grid item xs={5} lg={4} className="card-image">
           <img className="images-card" src={icon} alt="icon" />
         </Grid>
 
         <Grid
           item
           xs={7}
+          lg={8}
           className="card-text"
           style={{
             height: "100%",

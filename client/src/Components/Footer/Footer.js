@@ -17,8 +17,8 @@ export default function Footer() {
 
   return (
     <Grid container spacing={1} style={{padding:"2%", height:"100%" }}>
-      <Grid item xs={12} style={{height:"50%"  , display:"flex"}}>
-      <Grid item xs={7} sm={4}  style={{height:"100%"  }} >
+      <Grid item xs={12} style={{height:"60%"  , display:"flex"}}>
+      <Grid item xs={7} sm={4}  style={{height:"100%" ,marginLeft:"1%" }} >
         <Typography variant="h5" color="primary">
           Endereço
         </Typography>
@@ -38,7 +38,7 @@ export default function Footer() {
           Minas Gerais
         </Typography>
       </Grid>
-      <Grid item xs={7} sm={4} style={{ margin:"0" }}>
+      <Grid item xs={7} sm={4} style={{ margin:"0"}}>
         <Typography variant="h5" color="primary">
           Contato
         </Typography>
@@ -49,7 +49,7 @@ export default function Footer() {
           +31 997139306
         </Typography>
       </Grid>
-      <Grid item xs={3}  style={{  margin:"0" ,  display:"flex", alignItems:"center", justifyContent:"center"}}>
+      <Grid item xs={4}  style={{  margin:"0" ,  display:"flex", alignItems:"center", justifyContent:"center"}}>
         <img src={logo} alt="logo" className="logo_footer" />
       </Grid>
       </Grid>
@@ -65,7 +65,7 @@ export default function Footer() {
             </a>
         ))}
       </Grid>
-      <Grid item xs={12} style={{height:"20%"}} >
+      <Grid item xs={12} style={{height:"10%",marginLeft:"1%"}} >
         <Typography className={classes.root} variant="body2" id="copyrights">
           {" "}
           Copyright &#xA9; 2020 Lidas{" "}

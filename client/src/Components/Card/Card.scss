@@ -55,9 +55,16 @@
   .card {
     height: 80%;
   }
+  .color_white, .color_red {
+    font-size: 5vh;
+     }
 }
 @media only screen and (min-width: 600px) and (orientation: portrait) {
   .card {
     height: 50%;
   }
+  .color_white, .color_red {
+    font-size: 5vh;
+     }
+ 
 }
