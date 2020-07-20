@@ -41,6 +41,10 @@
 }
 
 @media only screen and (min-width: 600px) and (orientation: landscape) {
+  .text-presentation,
+  .text-presentation-quemSomos {
+    height: 90%;
+  }
   .image-presentation {
     height: 80%;
     img {
