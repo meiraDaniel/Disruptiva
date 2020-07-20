@@ -47,6 +47,13 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: "wrap",
     minWidth: 300,
     width: "100%",
+    height: "10%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    "@media (min-width:600px) and(orietation:landscape)": {
+      height: "5%",
+    },
   },
   image: {
     position: "relative",
@@ -90,8 +97,8 @@ const useStyles = makeStyles((theme) => ({
     top: 0,
     bottom: 0,
     backgroundSize: "cover",
-    backgroundAttachment: 'fixed',
-    backgroundPosition: 'center'
+    backgroundAttachment: "fixed",
+    backgroundPosition: "center",
   },
   imageBackdrop: {
     position: "absolute",
@@ -121,6 +128,17 @@ const useStyles = makeStyles((theme) => ({
   },
   imgThumbnail: {
     backgroundSize: "cover !important",
+  },
+  topPortifolio: {
+    height: "25%",
+    "@media (min-width:600px) and(orietation:landscape)": {
+      height: "35%",
+    },
+  },
+
+  bottomPortfolio: {
+    height: "65%",
+    marginTop: "5%",
   },
 }));
 
@@ -161,12 +179,7 @@ export default function Portfolio() {
 
   return (
     <Grid container style={{ height: "100%", background: "#f3d549" }}>
-      <Grid
-        container
-        style={{
-          height: "25%",
-        }}
-      >
+      <Grid container className={classes.topPortifolio}>
         <Grid
           item
           xs={3}
@@ -179,9 +192,8 @@ export default function Portfolio() {
               Portfólio
             </Typography>
           </Grid>
-          <Grid item xs={10}>
-            <Typography variant="subtitle1">
-            Conheça nosso trabalho            </Typography>
+          <Grid item xs={12}>
+            <Typography variant="subtitle1">Conheça nosso trabalho </Typography>
           </Grid>
         </Grid>
         <Grid item xs={9} lg={10} style={{ height: "100%", display: "flex" }}>
@@ -202,13 +214,9 @@ export default function Portfolio() {
         </Grid>
       </Grid>
 
-      <Grid
-        container
-        justify="center"
-        style={{ height: "65%", marginTop: "5%" }}
-      >
+      <Grid container justify="center" className={classes.bottomPortfolio}>
         {currentVideo ? (
-          <Grid item xs={12} sm={10}  lg={8} style={{ height: "90%" }}>
+          <Grid item xs={12} sm={10} lg={8} style={{ height: "90%" }}>
             <VideoPlayer video={currentVideo} />
           </Grid>
         ) : (
@@ -225,12 +233,7 @@ export default function Portfolio() {
         className={classes.root}
         item
         xs={12}
-        style={{
-          height: "10%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
+     
       >
         <ButtonBase
           focusRipple
@@ -256,8 +259,7 @@ export default function Portfolio() {
               className={classes.imageTitle}
             >
               <a
-                            className='acessePlayslit'
-
+                className="acessePlayslit"
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://www.youtube.com/playlist?list=PLPTwwbrJNg5Bs659JJYqVeR4vQlDTe3rD"

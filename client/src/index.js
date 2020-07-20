@@ -82,12 +82,14 @@ const theme = createMuiTheme({
     subtitle1: {
       color: "white",
       fontSize: "0.8rem",
-      "@media (min-width:600px) and (max-width:900px)": {
+      "@media (min-width:600px) and (max-width:900px) and (orientation:portrait)": {
         fontSize: "1.2rem",
       },
-    },
+      "@media (min-width:600px) and (max-width:900px) and (orientation:landscape)": {
+        fontSize: "1rem",
+      },
   },
-});
+}})
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
