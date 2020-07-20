@@ -60,13 +60,13 @@ const theme = createMuiTheme({
     body2: {
       fontSize: "0.7rem",
       "@media (min-width:600px) and (orientation:landscape) and (max-width:900px)": {
-        fontSize: "1rem",
+        fontSize: "0.7rem",
       },
       "@media (min-width:600px) and (orientation:portrait) and (max-width:900px)": {
-        fontSize: "1.3rem",
+        fontSize: "1.25rem",
       },
       "@media (min-width:901px)": {
-        fontSize: "1.2rem",
+        fontSize: "1.1rem",
       },
     },
     h5: {

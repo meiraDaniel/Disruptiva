@@ -8,9 +8,11 @@ import camera from "../Images/Icons/camera.svg";
 import price from "../Images/Icons/price.svg";
 import useInterval from "react-useinterval";
 import Presentation from "../Components/Presentation/Presentation";
+import PresentationQuemEscreve from "../Components/Presentation/PresentationQuemEscreve";
+
 import { text, text2 } from "./services";
 import Portfolio from "../Components/Portfolio/Portfolio";
-import cameraPhoto from "../Images/rosinha2.png";
+import cameraPhoto from "../Images/ANEXO1.png";
 import Ariane from "../Images/Ariane.png";
 import Icons from "../Components/Icons/Icons";
 import Footer from "../Components/Footer/Footer";
@@ -21,13 +23,13 @@ import ShowFormProvider from "../Context/ShowForm";
 
 const useStyles = makeStyles({
   marginPresentation: {
-    height: "85vh",
+    height: "90vh",
     margin: "20% 5% 3% 5% ",
     "@media (min-width:600px) and (max-width:900px) and (orientation:landscape)": {
       margin: "30% 5%  3% 5% ",
     },
     "@media (min-width:600px) and (max-width:900px) and (orientation:portrait)": {
-      margin: "20% 5%  3% 5% ",
+      margin: "20% 5%  0% 5% ",
     },
     "@media (min-width:900px)": {
       margin: "15% 5%  3% 5% ",
@@ -52,27 +54,26 @@ const useStyles = makeStyles({
       height: "60vh",
     },
   },
-  navegation:{
-    height: "10%", 
-    position: "absolute" ,
-        "@media (min-width:450px) and (max-width:599px)": {
-          height: "15%", 
-
-        },
+  navegation: {
+    height: "10%",
+    position: "absolute",
+    "@media (min-width:450px) and (max-width:599px)": {
+      height: "15%",
+    },
     "@media (min-width:600px) and (max-width:901px)": {
-      height: "13%", 
+      height: "10%",
     },
     "@media (min-width:901px)": {
-      height: "13%", 
-      
+      height: "13%",
     },
-  }
+  },
 });
 
 export default function Home() {
   const classes = useStyles();
   const [currentInd, setCurrentInd] = useState(0);
-
+ 
+ 
   const nextSlide = () => {
     setCurrentInd((state) => (state + 1) % text.length);
   };
@@ -136,41 +137,38 @@ export default function Home() {
           />
         </Grid>
       </Grid>
+      <Grid
+        id="portfolio"
+        item
+        style={{
+          background: "#F3D549",
+          height: "120vh",
+          width: "100%",
+          margin: "3% 0 3% 0",
+        }}
+      >
+        <Portfolio />
+      </Grid>
+
+      <Grid id="quemsomos" item className={classes.marginPresentation}>
+        <Presentation
+          title="Quem somos?"
+          photo={cameraPhoto}
+        />
+      </Grid>
+      <div className="section--orange"></div>
       <Grid container style={{ overflow: "hidden" }}>
         <Grid
           id="quemescreve"
           item
-          style={{ height: "85vh", margin: "3% 5% 3% 5%" }}
+          style={{ height: "90vh", margin: "3% 5% 3% 5%" }}
         >
-          <Presentation
+          <PresentationQuemEscreve
             title="Quem escreve?"
-            text="Meu nome é Ariane Gervásio. Sou jornalista com pós-graduação em Marketing Digital e Relações Internacionais. Já atuei na área administrativa, assessoria de comunicação, internacional e no marketing de empresas como Instituto Embelleze e Samtek. Durante 8 anos trabalhei em televisão nos setores de produção, reportagem, edição de imagens, coordenação de programa e CEDOC – fui responsável pela criação do arquivo audiovisual da emissora. A Disruptiva é um sonho que se tornou realidade com duas coisas que eu amo: marketing e vídeo. Não faço isso sozinha, mas com finalistas, editores, cinegrafistas e roteiristas parceiros.
-            "
+            text="Ariane Gervásio é jornalista com pós-graduação em Marketing Digital e Relações Internacionais. Trabalhou na assessoria de comunicação da Prefeitura de Belo Horizonte e Câmera de Negócios Nigeria-Brazil. Durante 8 anos na TV UFMG, passou por diversas áreas dos setores de edição e redação. Também foi responsável pela criação do Centro de Documentação do canal, compartilhando esses conhecimentos em fóruns nacionais e internacionais.
+            Recentemente, foi responsável pelo setor de marketing e comunicação da Associação Brasileira de Preservação Audiovisual e de empresas belo-horiozntinas como Samtek e Instituto Embelleze.
+            A Disruptiva é um sonho que se tornou realidade unindo MARKETING e VÍDEO, além de um grupo de roteiristas, cinegrafistas e editores parceiros."
             photo={Ariane}
-          />
-        </Grid>
-        <Grid
-          id="portfolio"
-          item
-          style={{
-            background: "#F3D549",
-            height: "120vh",
-            width: "100%",
-            margin: "3% 0 3% 0",
-          }}
-        >
-          <Portfolio />
-        </Grid>
-        <Grid
-          id="quemsomos"
-          item
-          className={classes.marginPresentation}
-         
-        >
-          <Presentation
-            title="Quem somos?"
-            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo in nibh faucibus purus id sit tortor arcu eu. Quam sed in sed sit in feugiat risus non porta. Nibh nulla at cras in phasellus tincidunt euismod sit. Viverra in sit vestibulum, justo mauris id ultricies proin massa.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo in nibh faucibus purus id sit tortor arcu eu. Quam sed in sed sit in feugiat risus non porta. Nibh nulla at cras in phasellus tincidunt euismod sit. Viverra in sit vestibulum, justo mauris id ultricies proin massa."
-            photo={cameraPhoto}
           />
         </Grid>
       </Grid>

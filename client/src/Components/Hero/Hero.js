@@ -12,11 +12,10 @@ export default function Hero() {
   const [typeSpeed, setTypeSpeed] = useState(200);
 
   const words = [
-    "comodidade",
-    "agilidade",
-    "personalização",
-    "colaboração",
-    "cocriacao",
+    "disruptiva",
+    "simples",
+    "intuitiva",
+   
   ];
 
   const type = () => {
@@ -47,7 +46,7 @@ export default function Hero() {
     <div className="hero-main">
       <div className="content-left">
         <div className="hero-center-title">
-          <h1>AUDIOVISUAL DISRUPTIVO</h1>
+          <h1>Produção audiovisual</h1>
 
           <h2 className="typing">
             <span className="txt">{txt}</span>

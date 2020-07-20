@@ -90,7 +90,8 @@ const useStyles = makeStyles((theme) => ({
     top: 0,
     bottom: 0,
     backgroundSize: "cover",
-    backgroundPosition: "center",
+    backgroundAttachment: 'fixed',
+    backgroundPosition: 'center'
   },
   imageBackdrop: {
     position: "absolute",
@@ -175,13 +176,12 @@ export default function Portfolio() {
         >
           <Grid item xs={10}>
             <Typography variant="h5" color="primary">
-              Portfolio
+              Portfólio
             </Typography>
           </Grid>
           <Grid item xs={10}>
             <Typography variant="subtitle1">
-              Lorem ipsum dolor sit amet
-            </Typography>
+            Conheça nosso trabalho            </Typography>
           </Grid>
         </Grid>
         <Grid item xs={9} lg={10} style={{ height: "100%", display: "flex" }}>
