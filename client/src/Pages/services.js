@@ -1,5 +1,5 @@
 export const text = [
-  "Vídeo – Roteirização, gravação, edição e finalização",
+"  Roteirização, gravação, edição e finalização de vídeos e animações",
   "Transmissões ao vivo pela internet",
   "Roteirização, gravação, edição e finalização de podcast",
 ];

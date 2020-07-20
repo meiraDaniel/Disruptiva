@@ -51,9 +51,7 @@ export default function Card({ title, text, icon, currentInd, flag }) {
             <span className={currentInd === 2 ? "color_red" : "color_white"}>
               &#9900;
             </span>
-            <span className={currentInd === 3? "color_red" : "color_white"}>
-              &#9900;
-            </span>
+          
   
           </Grid>
         </Grid>
