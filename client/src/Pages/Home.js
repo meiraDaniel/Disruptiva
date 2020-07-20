@@ -23,7 +23,7 @@ import ShowFormProvider from "../Context/ShowForm";
 
 const useStyles = makeStyles({
   marginPresentation: {
-    height: "90vh",
+    height: "92vh",
     margin: "20% 5% 3% 5% ",
     "@media (min-width:600px) and (max-width:900px) and (orientation:landscape)": {
       margin: "30% 5%  3% 5% ",
@@ -161,7 +161,7 @@ export default function Home() {
         <Grid
           id="quemescreve"
           item
-          style={{ height: "90vh", margin: "3% 5% 3% 5%" }}
+          style={{ height: "92vh", margin: "3% 5% 3% 5%" }}
         >
           <PresentationQuemEscreve
             title="Quem faz?"
