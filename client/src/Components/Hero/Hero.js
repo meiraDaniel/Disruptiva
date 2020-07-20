@@ -9,7 +9,7 @@ export default function Hero() {
   const [currentInd, setCurrentInd] = useState(0);
   const [deleting, setDelete] = useState(false);
   const [txt, setTxt] = useState("");
-  const [typeSpeed, setTypeSpeed] = useState(200);
+  const [typeSpeed, setTypeSpeed] = useState(180);
 
   const words = [
     "disruptiva",
@@ -31,13 +31,13 @@ export default function Hero() {
     }
 
     if (!deleting && txt === fullTxt) {
-      setTypeSpeed(600);
+      setTypeSpeed(400);
       setDelete(true);
     }
     if (deleting && txt === "") {
       setCurrentInd(currentInd + 1);
       setDelete(false);
-      setTypeSpeed(200);
+      setTypeSpeed(180);
     }
   };
   useInterval(type, typeSpeed);
