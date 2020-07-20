@@ -61,7 +61,7 @@ const useStyles = makeStyles({
       height: "15%",
     },
     "@media (min-width:600px) and (max-width:901px)": {
-      height: "10%",
+      height: "11%",
     },
     "@media (min-width:901px)": {
       height: "13%",
