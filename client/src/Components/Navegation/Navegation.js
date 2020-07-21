@@ -17,7 +17,7 @@ export default function Navegation() {
             Quem somos
           </a>
           <a onClick={() => set(false)} href="#quemescreve">
-            Quem escreve
+            Quem faz
           </a>
           <a onClick={() => set(false)} href="#portfolio">
             Portfólio
