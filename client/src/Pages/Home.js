@@ -166,7 +166,7 @@ export default function Home() {
           <PresentationQuemEscreve
             title="Quem faz?"
             text="Ariane Gervásio é jornalista com pós-graduação em Marketing Digital e Relações Internacionais. Trabalhou na assessoria de comunicação da Prefeitura de Belo Horizonte e Câmera de Negócios Nigeria-Brazil. Durante 8 anos na TV UFMG, passou por diversas áreas dos setores de edição e redação. Também foi responsável pela criação do Centro de Documentação do canal, compartilhando esses conhecimentos em fóruns nacionais e internacionais.
-            Recentemente, foi responsável pelo setor de marketing e comunicação da Associação Brasileira de Preservação Audiovisual e de empresas belo-horiozntinas como Samtek e Instituto Embelleze.
+            Recentemente, foi responsável pelo setor de marketing e comunicação da Associação Brasileira de Preservação Audiovisual e de empresas belo-horizontinas como Samtek e Instituto Embelleze.
             A Disruptiva é um sonho que se tornou realidade unindo MARKETING e VÍDEO, além de um grupo de roteiristas, cinegrafistas e editores parceiros."
             photo={Ariane}
           />
