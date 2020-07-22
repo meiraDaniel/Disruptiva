@@ -15,8 +15,8 @@ export default function Icons() {
       <a className="icon-size" target="_blank" href="https://api.whatsapp.com/send?phone=5531997139306">
         <img src={whatsapp} alt="whatsapp" />
       </a>
-      <img  className="icon-size" src={message} onClick={() => setShowForm(true)} alt="message" />
-     
+{/*       <img  className="icon-size" src={message} onClick={() => setShowForm(true)} alt="message" />
+ */}     
     </div>
   );
 }
