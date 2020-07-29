@@ -14,7 +14,7 @@ import schemas from "../../Helpers/schemasYup";
 
 import FormField from "./FormField";
 import { useShowForm } from "../../Context/ShowForm";
-import api from "../../Services/api";
+import api from "../../Services/callApis";
 
 function ContactForm() {
   const { register, handleSubmit, control, errors } = useForm({
@@ -32,8 +32,8 @@ function ContactForm() {
   }, []);
 
   const handleFormSubmit = async (data) => {
-    await api.sendMail(data);
     setShowForm(false);
+    await api.sendMail(data);
   };
 
   const handleOutsideClick = (e) => {

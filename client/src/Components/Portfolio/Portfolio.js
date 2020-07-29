@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import "./Portfolio.scss";
 import VideoPlayer from "../Video/VideoPlayer";
 import { Grid, ButtonBase, Typography } from "@material-ui/core";
@@ -7,40 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import camera from "../../Images/cameraPhoto.png";
 import loading from "../../Images/Icons/loader.svg";
 
-const listaVideos = [
-  {
-    id: 0,
-    idVideo: "WYTkAwprLec",
-    name:
-      "VIDEO EM MOTION GRAPHICS DOMINGO11H11   CLIENTE KIMTARA NUMEROLOGIA 1",
-    urlThumbnail: "https://i.ytimg.com/vi/WYTkAwprLec/mqdefault.jpg",
-  },
-  {
-    id: 1,
-    idVideo: "vAU4GlksQNo",
-    name: "Corpo clinico de Cirurgia Cardiovascular   Hospital Madre Teresa",
-    urlThumbnail: "https://i.ytimg.com/vi/vAU4GlksQNo/mqdefault.jpg",
-  },
-  {
-    id: 2,
-    idVideo: "d5kdwQ_GTwY",
-    name: "A Noiva quer",
-    urlThumbnail: "https://i.ytimg.com/vi/d5kdwQ_GTwY/mqdefault.jpg",
-  },
-  {
-    id: 3,
-    idVideo: "jkrAp93Zdn4",
-    name: "360 Meridianos   Serra da Capivara",
-    urlThumbnail: "https://i.ytimg.com/vi/jkrAp93Zdn4/mqdefault.jpg",
-  },
-  {
-    id: 4,
-    idVideo: "HGlYErdUdfI",
-    name: "Video institucional   W3 Uniformes",
-    urlThumbnail: "https://i.ytimg.com/vi/HGlYErdUdfI/mqdefault.jpg",
-  },
-];
-
+import api from "../../Services/callApis";
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -149,14 +115,10 @@ export default function Portfolio() {
   const classes = useStyles();
 
   const getVideoInfos = async () => {
-    // const res = await axios.get(`http://localhost:5000/api/youtubeVideos`, {
-    //   headers: {
-    //     "Access-Control-Allow-Origin": true,
-    //     "Content-Type": "application/json",
-    //   },
-    // });
-    setInfoVideos(listaVideos);
-    setCurrentVideo(listaVideos[0]);
+    const data = await api.getVideos();
+
+    setInfoVideos(data.videos);
+    setCurrentVideo(data.videos[0]);
   };
 
   useEffect(() => {
@@ -206,7 +168,6 @@ export default function Portfolio() {
               className={classes.imgThumbnail}
               style={{
                 background: `url(${data.urlThumbnail}`,
-                backgroundSize: "cover",
                 cursor: "pointer",
               }}
             ></Grid>
@@ -229,12 +190,7 @@ export default function Portfolio() {
           </Grid>
         )}
       </Grid>
-      <Grid
-        className={classes.root}
-        item
-        xs={12}
-     
-      >
+      <Grid className={classes.root} item xs={12}>
         <ButtonBase
           focusRipple
           key="Camera"
