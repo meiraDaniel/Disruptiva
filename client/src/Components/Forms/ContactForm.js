@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers";
 import { CSSTransition } from "react-transition-group";
@@ -17,20 +17,16 @@ import { useShowForm } from "../../Context/ShowForm";
 import api from "../../Services/callApis";
 
 function ContactForm() {
-  const { register, handleSubmit, control, errors } = useForm({
+  const { register, handleSubmit,  errors } = useForm({
     resolver: yupResolver(schemas.contactSchema),
   });
 
   const { showForm, setShowForm } = useShowForm();
-  const windowHeight = window.innerHeight;
 
   const node = useRef();
   const classes = useStyles();
 
-  useEffect(() => {
-    document.addEventListener("mousedown", handleOutsideClick);
-  }, []);
-
+  
   const handleFormSubmit = async (data) => {
     setShowForm(false);
     await api.sendMail(data);
@@ -39,6 +35,9 @@ function ContactForm() {
   const handleOutsideClick = (e) => {
     node.current.contains(e.target) && setShowForm(false);
   };
+  useEffect(() => {
+    document.addEventListener("mousedown", handleOutsideClick);
+  }, [handleOutsideClick]);
 
   return (
     <>

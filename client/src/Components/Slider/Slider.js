@@ -67,11 +67,11 @@ const Slider = (props) => {
         clearInterval(interval);
       }
     };
-  }, []);
+  }, [props.autoPlay]);
 
   useEffect(() => {
     if (transition === 0) setState({ ...state, transition: 0.45 });
-  }, [transition]);
+  }, [transition,state]);
 
   const handleResize = () => {
     setState({ ...state, translate: getWidth(), transition: 0 });
@@ -102,14 +102,14 @@ const Slider = (props) => {
       translate: translate + getWidth(),
       activeSlide: activeSlide === slides.length - 1 ? 0 : activeSlide + 1,
     });
-
+/* 
   const prevSlide = () =>
     setState({
       ...state,
       translate: 0,
       activeSlide: activeSlide === 0 ? slides.length - 1 : activeSlide - 1,
     });
-
+ */
   return (
     <div css={SliderCSS} ref={sliderRef}>
       <SliderContent

@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import "./Hero.scss";
 import useInterval from "react-useinterval";
 import { socialYellow } from "../../Helpers/socialMedia";
-import Grow from "@material-ui/core/Grow";
 
 export default function Hero() {
   const [currentInd, setCurrentInd] = useState(0);

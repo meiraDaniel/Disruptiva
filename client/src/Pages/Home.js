@@ -23,16 +23,77 @@ import ShowFormProvider from "../Context/ShowForm";
 
 const useStyles = makeStyles({
   marginPresentation: {
-    height: "92vh",
-    margin: "20% 5% 3% 5% ",
+    height: "80vh",
+    margin: "10% 5% 3% 5% ",
+    "@media (width:568px) and (height:320px)": {
+      height: "100vh",
+    },
     "@media (min-width:600px) and (max-width:900px) and (orientation:landscape)": {
-      margin: "30% 5%  3% 5% ",
+      height: "50vh",
+
+      margin: "0% 5%  8% 5% ",
+
+    },
+    "@media (min-width:600px) and (orientation:landscape) and (max-width:900px) and (min-height:600px)": {
+      height: "40vh",
+
+      margin: "0% 5%  8% 5% ",
     },
     "@media (min-width:600px) and (max-width:900px) and (orientation:portrait)": {
-      margin: "20% 5%  0% 5% ",
+      height: "50vh",
+      margin: "0% 5%  0% 5% ",
     },
-    "@media (min-width:900px)": {
-      margin: "15% 5%  3% 5% ",
+    "@media (min-width:901px) and (max-width:1030px)": {
+      height: "55vh",
+
+      margin: "5% 3% 0% 3% ",
+    },
+    "@media (width:1024px) and (height:1366px)": {
+      height: "30vh",
+      margin: "5% 3% 0% 3% ",
+    },
+    "@media (min-width:1031px)": {
+      height: "55vh",
+      margin: "0% 3% 5% 3% ",
+
+    }
+  },
+  portfolio:{
+
+      background: "#F3D549",
+      height: "120vh",
+      width: "100%",
+      margin: "3% 0 5% 0",
+      "@media (width:568px) and (height:320px)": {
+        height: "150vh",
+      },
+      "@media (min-width:600px) and (max-width:900px) and (orientation:landscape)": {
+        margin: "3% 0 30% 0",
+
+      },
+      "@media (min-width:600px) and (max-width:900px) and (orientation:portrait)": {
+        margin: "3% 0 20% 0",
+      },
+      "@media (min-width:901px) and (max-width:1030px)": {
+        margin: "3% 0 20% 0",
+
+      },
+      "@media (width:1024px) and (height:1366px)": {
+        margin: "3% 0 5% 0",
+
+      },
+      "@media (min-width:1031px)": {
+        margin: "3% 0 20% 0",
+
+  
+      }
+  },
+  cards:{
+    height: "60vh",
+    margin: "10% 0 0 0",
+    "@media (max-width:568px) and (max-height:320px)": {
+      height: "100vh",
+      margin: "10% 0 0 0",
     },
   },
   logos: {
@@ -95,10 +156,7 @@ export default function Home() {
         container
         spacing={3}
         justify="center"
-        style={{
-          height: "60vh",
-          margin: "10% 0 0 0",
-        }}
+      className={classes.cards}
       >
         <Grid
           item
@@ -140,12 +198,7 @@ export default function Home() {
       <Grid
         id="portfolio"
         item
-        style={{
-          background: "#F3D549",
-          height: "120vh",
-          width: "100%",
-          margin: "3% 0 3% 0",
-        }}
+     className={classes.portfolio}
       >
         <Portfolio />
       </Grid>
@@ -161,7 +214,8 @@ export default function Home() {
         <Grid
           id="quemescreve"
           item
-          style={{ height: "92vh", margin: "3% 5% 3% 5%" }}
+          item className={classes.marginPresentation}
+          
         >
           <PresentationQuemEscreve
             title="Quem faz?"

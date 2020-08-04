@@ -4,7 +4,7 @@ import VideoPlayer from "../Video/VideoPlayer";
 import { Grid, ButtonBase, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import camera from "../../Images/cameraPhoto.png";
-import loading from "../../Images/Icons/loader.svg";
+import Loading from "../Loading/Loading";
 
 import api from "../../Services/callApis";
 const useStyles = makeStyles((theme) => ({
@@ -96,15 +96,18 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover !important",
   },
   topPortifolio: {
-    height: "25%",
-    "@media (min-width:600px) and(orietation:landscape)": {
-      height: "35%",
+    height: "15%",
+    "@media (min-width:600px) and (orientation:landscape)": {
+      height: "25%",
     },
   },
 
   bottomPortfolio: {
     height: "65%",
     marginTop: "5%",
+    "@media (min-width:600px) and (orientation:landscape)": {
+      height: "65%",
+    },
   },
 }));
 
@@ -121,9 +124,9 @@ export default function Portfolio() {
     setCurrentVideo(data.videos[0]);
   };
 
-  useEffect(() => {
+/*   useEffect(() => {
     getVideoInfos();
-  }, []);
+  }, []); */
 
   useEffect(() => {
     if (infoVideos && currentVideo) {
@@ -181,12 +184,8 @@ export default function Portfolio() {
             <VideoPlayer video={currentVideo} />
           </Grid>
         ) : (
-          <Grid item xs={12} sm={6} style={{ height: "90%" }}>
-            <img
-              src={loading}
-              alt="placeholder"
-              className="portfolio_loadinImage"
-            />
+          <Grid item xs={12} sm={6} style={{ display:"flex", justifyContent:"center", alignItems:"center" }}>
+          <Loading></Loading>
           </Grid>
         )}
       </Grid>

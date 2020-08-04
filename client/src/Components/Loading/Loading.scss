@@ -1,0 +1,56 @@
+@import "../../global.scss";
+
+.main-loading{
+    height:80%;
+    width:80%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.dot{
+opacity: 1;
+position: absolute;
+width: 50%;
+height: 50%;
+display:flex;
+justify-content:center;
+align-items:center;
+ :first-child{
+    float: left;
+    width: 30px;
+    height:30px;
+    border-radius: 100%;
+    background:#fff;
+    animation: dot 1s ease-in-out -0.2s infinite;
+    margin:5px;
+ }
+ :nth-child(2) {
+    float: left;
+    width: 30px;
+    height:30px;
+    border-radius: 100%;
+    background:#fff;
+    animation: dot 1s ease-in-out -0.2s infinite;
+    margin:5px;  }
+    :nth-child(3) {
+        float: left;
+        width: 30px;
+        height:30px;
+        border-radius: 100%;
+        background:#fff;
+        margin:5px;
+        animation: dot 1s ease-in-out -0.4s infinite;;  }
+}
+
+
+@keyframes dot{
+0% {
+    transform: translateY(5px);
+}
+50% {
+    transform: translateY(-5px);
+}
+100% {
+    transform: translateY(5px)
+}
+}

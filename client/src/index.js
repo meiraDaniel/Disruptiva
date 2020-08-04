@@ -58,19 +58,29 @@ const theme = createMuiTheme({
       },
     },
     body2: {
-      fontSize: "0.7rem",
-      "@media (min-width:600px) and (orientation:landscape) and (max-width:900px)": {
+      fontSize: "0.6rem",
+      "@media (min-width:600px) and (orientation:landscape) and (max-width:900px) ": {
+        fontSize: "0.5rem",
+      },
+      "@media (min-width:600px) and (orientation:landscape) and (max-width:900px) and (min-height:600px)": {
         fontSize: "0.7rem",
       },
+     
       "@media (min-width:600px) and (orientation:portrait) and (max-width:900px)": {
-        fontSize: "1.25rem",
+        fontSize: "0.7rem",
+
       },
-      "@media (min-width:901px)": {
+      "@media (min-width:901px) and (max-width:1030px)": {
+        fontSize: "1rem",
+
+
+      },
+      "@media (min-width:1031px)": {
         fontSize: "1.1rem",
       },
     },
     h5: {
-      fontSize: "1rem",
+      fontSize: "0.5rem",
       fontWeight: "700",
       "@media (min-width:600px) and (max-width:900px)": {
         fontSize: "1.4rem",
@@ -81,12 +91,15 @@ const theme = createMuiTheme({
     },
     subtitle1: {
       color: "white",
-      fontSize: "0.8rem",
+      fontSize: "0.7rem",
       "@media (min-width:600px) and (max-width:900px) and (orientation:portrait)": {
         fontSize: "1.2rem",
       },
       "@media (min-width:600px) and (max-width:900px) and (orientation:landscape)": {
         fontSize: "1rem",
+      },
+      "@media (min-width:900px)": {
+        fontSize: "1.5rem",
       },
   },
 }})

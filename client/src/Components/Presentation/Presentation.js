@@ -17,10 +17,10 @@ export default function Presentation({ title, text, photo, id }) {
       container
       spacing={2}
       justify="center"
-      alignItems="center"
+      alignItems="flex-start"
       style={{ height: "100%" }}
     >
-      <Grid item xs={10} sm={6} lg={5}  className="text-presentation-quemSomos">
+      <Grid item xs={10} sm={8} lg={5}   className="text-presentation-quemSomos">
         <Grid item xs={12} sm={12} className="title-presentation">
           <Typography
             variant="h4"
@@ -57,7 +57,7 @@ export default function Presentation({ title, text, photo, id }) {
           </Typography>
         </Grid>
       </Grid>
-      <Grid item xs={9} sm={6} lg={5} className="image-presentation">
+      <Grid item xs={8} sm={4} lg={4} className="image-presentation">
         <img src={photo} alt="team" />
       </Grid>
     </Grid>

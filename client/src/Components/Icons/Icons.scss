@@ -5,9 +5,9 @@
   position: fixed;
   align-items:center;
   justify-content:center;
-  top: 90%;
-  left: 85%;
-  width: 15%;
+  top: 85%;
+  left: 75%;
+  width: 25%;
   height: 10%;
   cursor:pointer;
 }
@@ -19,7 +19,12 @@
     height: 100%;
   }
 }
-
+@media only screen and (max-width: 300px) {
+  .icons-main {
+    left: 45%;
+    width: 55%;
+  }
+}
 @media only screen and (min-width: 600px) and (max-width: 900px) and (orientation: portrait) {
   .icons-main {
     left: 80%;
