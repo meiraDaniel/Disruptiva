@@ -124,9 +124,9 @@ export default function Portfolio() {
     setCurrentVideo(data.videos[0]);
   };
 
-/*   useEffect(() => {
+   useEffect(() => {
     getVideoInfos();
-  }, []); */
+  }, []); 
 
   useEffect(() => {
     if (infoVideos && currentVideo) {
