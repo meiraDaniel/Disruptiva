@@ -8,14 +8,16 @@ $fontMedio: "Futura_Md";
 $fontBold: "Futura_Bold";
 
 //pallet
-$azul: #283047;
-$rosa: #cf1552;
-$branco: #fbeeee;
-$laranja: #e37d4d;
 $amarelo: #f3d549;
+$amareloEscuro: #efc249;
+$azul: #283047;
+$branco: #fbeeee;
 $error: #ff0033;
+$laranja: #e37d4d;
+$nude: #e685a3;
+$salmao: #e68585;
 $preto: #000;
-
+$rosa: #cf1552;
 
 body {
   width: 100%;
@@ -26,7 +28,6 @@ body {
   width: 100%;
   height: 100%;
 }
-
 
 :export {
   azul: $azul;

@@ -27,7 +27,15 @@ const getVideos = async () => {
   return res.data;
 };
 
+const getPostsMedium = async () => {
+  const res = await axios.get(
+    "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@lioliveiraz"
+  );
+  return res.data.items;
+};
+
 export default {
+  getPostsMedium,
   getVideos,
   sendMail,
 };
