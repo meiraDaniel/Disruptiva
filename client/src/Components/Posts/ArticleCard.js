@@ -1,9 +1,11 @@
 import React from "react";
 
-const ArticleCard = ({ thumbnail, title }) => {
+const ArticleCard = ({ link, thumbnail, title }) => {
   return (
     <div className="article-content">
-      <img className="article-image" src={thumbnail} />
+      <a target="_blank" rel="noopener noreferrer" href={link}>
+        <img className="article-image" src={thumbnail} />
+      </a>
       <h4 className="article-title">{title}</h4>
     </div>
   );

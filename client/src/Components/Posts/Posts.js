@@ -30,6 +30,7 @@ const Posts = () => {
           return (
             <div key={index} className="article-box">
               <ArticleCard
+                link={article.link}
                 thumbnail={article.thumbnail}
                 title={article.title}
               />
