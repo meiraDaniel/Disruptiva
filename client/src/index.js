@@ -5,6 +5,9 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import "./global.scss";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import {
+  BrowserRouter
+} from 'react-router-dom';
 
 const theme = createMuiTheme({
   palette: {
@@ -41,7 +44,7 @@ const theme = createMuiTheme({
       color: "white",
       fontSize: "1rem",
       "@media (min-width:600px) and (orientation:portrait) and (max-width:900px)": {
-        fontSize: "1.5rem",
+        fontSize: "1rem",
       },
       "@media (min-width:901px)": {
         fontSize: "1.7rem",
@@ -51,32 +54,30 @@ const theme = createMuiTheme({
       fontWeight: "700",
       fontSize: "1.6rem",
       "@media (min-width:600px) and (orientation:portrait) and (max-width:900px)": {
-        fontSize: "1.6rem",
+        fontSize: "2.5rem",
       },
       "@media (min-width:901px)": {
-        fontSize: "1.8rem",
+        fontSize: "2.3rem",
       },
     },
     body2: {
-      fontSize: "0.6rem",
-      "@media (min-width:600px) and (orientation:landscape) and (max-width:900px) ": {
-        fontSize: "0.5rem",
-      },
+      fontSize: ".85rem",
+
       "@media (min-width:600px) and (orientation:landscape) and (max-width:900px) and (min-height:600px)": {
         fontSize: "0.7rem",
       },
-     
+
       "@media (min-width:600px) and (orientation:portrait) and (max-width:900px)": {
-        fontSize: "0.7rem",
+        fontSize: "1.5rem",
 
       },
       "@media (min-width:901px) and (max-width:1030px)": {
-        fontSize: "1rem",
+        fontSize: "1.5rem",
 
 
       },
       "@media (min-width:1031px)": {
-        fontSize: "1.1rem",
+        fontSize: "1.7rem",
       },
     },
     h5: {
@@ -101,15 +102,19 @@ const theme = createMuiTheme({
       "@media (min-width:900px)": {
         fontSize: "1.5rem",
       },
-  },
-}})
+    },
+  }
+});
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </ThemeProvider>,
+    <BrowserRouter>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </BrowserRouter>
+  </ThemeProvider>
+  ,
   document.getElementById("root")
 );
 

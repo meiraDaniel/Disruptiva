@@ -1,53 +1,66 @@
 import React, { useEffect, useState } from "react";
-
-import api from "../../Services/callApis";
+import { Grid, Button } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 
 import "./Posts.scss";
-import ArticleCard from "./ArticleCard";
+import ArticleCard from "../Article/ArticleCard";
 
-const Posts = () => {
-  const [articles, setArticles] = useState([]);
+const useStyles = makeStyles({
+  buttonMore: {
+    display: 'flex',
+    justifyContent: "center",
+    margin: "5%"
+
+  }
+});
+
+const Posts = ({ articles }) => {
   const [activeArticles, setActiveArticles] = useState([]);
   const [numberVisibleArticles, setNumberVisibleArticles] = useState(4);
+  const classes = useStyles();
 
-  const getPosts = async () => {
-    const data = await api.getPostsMedium();
-    setArticles(data);
-  };
-
-  useEffect(() => {
-    getPosts();
-  }, []);
 
   useEffect(() => {
     setActiveArticles(articles.slice(0, numberVisibleArticles));
+
   }, [articles, numberVisibleArticles]);
 
   return (
-    <>
-      <div className="articles-container">
-        {activeArticles.map((article, index) => {
-          return (
-            <div key={index} className="article-box">
-              <ArticleCard
-                link={article.link}
-                thumbnail={article.thumbnail}
-                title={article.title}
-              />
-            </div>
-          );
-        })}
-      </div>
-      {articles.length > numberVisibleArticles && (
-        <button
-          className="articles-button"
-          onClick={() => setNumberVisibleArticles(numberVisibleArticles + 2)}
-        >
-          More
-        </button>
-      )}
-    </>
-  );
+    <Grid container>
+      <Grid container justify='center' spacing={3} >
+        {activeArticles.map(({ link, thumbnail, title }, index) =>
+          <Grid
+            item
+            xs={10}
+            sm={5}
+            lg={5}
+
+            key={index}
+          >
+            <ArticleCard
+              link={link}
+              thumbnail={thumbnail}
+              title={title}
+
+            />
+          </Grid>
+        )}
+      </Grid>
+      <Grid item xs={12} className={classes.buttonMore}>
+        {articles.length > numberVisibleArticles && (
+          <Button
+            size="large"
+            variant="contained"
+            color='primary'
+            className="articles-button"
+            onClick={() => setNumberVisibleArticles(numberVisibleArticles + 2)}
+          >
+            More
+          </Button>
+        )}
+      </Grid>
+    </Grid>);
+
 };
 
 export default Posts;

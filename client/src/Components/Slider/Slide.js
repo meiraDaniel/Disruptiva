@@ -2,7 +2,7 @@
 import React from "react";
 import { css, jsx } from "@emotion/core";
 
-const Slide = ({ content, size }) => (
+const Slide = ({ content }) => (
   <div
     css={css`
       height: 100%;

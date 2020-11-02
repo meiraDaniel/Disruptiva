@@ -1,7 +1,10 @@
 ::-webkit-scrollbar {
   display: none;
 }
-
+a{
+  text-decoration: none;
+  cursor: pointer;
+}
 // font
 
 $fontMedio: "Futura_Md";
@@ -18,6 +21,7 @@ $nude: #e685a3;
 $salmao: #e68585;
 $preto: #000;
 $rosa: #cf1552;
+
 
 body {
   width: 100%;

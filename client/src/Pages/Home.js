@@ -1,100 +1,95 @@
 import React, { useState } from "react";
+import { Grid, Typography } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import "./Home.scss";
+
+//images 
+import camera from "../Images/Icons/camera.svg";
+import price from "../Images/Icons/price.svg";
+import cameraPhoto from "../Images/ANEXO1.png";
+import Ariane from "../Images/FOTO_SITE.png";
+
 import Navegation from "../Components/Navegation/Navegation";
 import Hero from "../Components/Hero/Hero";
 import Logo from "../Components/Logos/Logos";
 import Card from "../Components/Card/Card";
 import ContactForm from "../Components/Forms/ContactForm";
-import camera from "../Images/Icons/camera.svg";
-import price from "../Images/Icons/price.svg";
+
 import useInterval from "react-useinterval";
 import Presentation from "../Components/Presentation/Presentation";
 import PresentationQuemEscreve from "../Components/Presentation/PresentationQuemEscreve";
-
 import { text, text2 } from "./services";
 import Portfolio from "../Components/Portfolio/Portfolio";
-import cameraPhoto from "../Images/ANEXO1.png";
-import Ariane from "../Images/FOTO_SITE.png";
 import Icons from "../Components/Icons/Icons";
 import Footer from "../Components/Footer/Footer";
-import "./Home.scss";
-import { Grid } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
 import ShowFormProvider from "../Context/ShowForm";
+import ArticleCard from '../Components/Article/ArticleCard';
+import { Container } from '@material-ui/core/Container';
 
 const useStyles = makeStyles({
   marginPresentation: {
-    height: "80vh",
-    margin: "10% 5% 3% 5% ",
-    "@media (width:568px) and (height:320px)": {
-      height: "100vh",
-    },
-    "@media (min-width:600px) and (max-width:900px) and (orientation:landscape)": {
-      height: "50vh",
+    height: "120vh",
+    marginTop: "5%",
 
-      margin: "0% 5%  8% 5% ",
+    "@media (min-width:600px) and (orientation:landscape) and (max-width:900px)": {
+      height: "60vh"
+    },
 
-    },
-    "@media (min-width:600px) and (orientation:landscape) and (max-width:900px) and (min-height:600px)": {
-      height: "40vh",
-
-      margin: "0% 5%  8% 5% ",
-    },
-    "@media (min-width:600px) and (max-width:900px) and (orientation:portrait)": {
-      height: "50vh",
-      margin: "0% 5%  0% 5% ",
-    },
-    "@media (min-width:901px) and (max-width:1030px)": {
-      height: "55vh",
-
-      margin: "5% 3% 0% 3% ",
-    },
     "@media (width:1024px) and (height:1366px)": {
       height: "30vh",
-      margin: "5% 3% 0% 3% ",
     },
-    "@media (min-width:1031px)": {
-      height: "55vh",
-      margin: "0% 3% 5% 3% ",
+    "@media (min-width:1020px)": {
+      height: "75vh",
+      marginTop: "0%",
+
+    },
+    "@media (min-width:1300px)": {
+      height: "90vh",
+      marginTop: "1%",
 
     }
   },
-  portfolio:{
+  portfolio: {
 
-      background: "#F3D549",
-      height: "120vh",
-      width: "100%",
+    background: "#F3D549",
+    height: "120vh",
+    width: "100%",
+    margin: "3% 0 5% 0",
+    "@media (width:568px) and (height:320px)": {
+      height: "150vh",
+    },
+    "@media (min-width:600px) and (max-width:900px) and (orientation:landscape)": {
+      margin: "3% 0 30% 0",
+
+    },
+    "@media (min-width:600px) and (max-width:900px) and (orientation:portrait)": {
+      margin: "3% 0 20% 0",
+    },
+    "@media (min-width:901px) and (max-width:1030px)": {
+      margin: "3% 0 20% 0",
+
+    },
+    "@media (width:1024px) and (height:1366px)": {
       margin: "3% 0 5% 0",
-      "@media (width:568px) and (height:320px)": {
-        height: "150vh",
-      },
-      "@media (min-width:600px) and (max-width:900px) and (orientation:landscape)": {
-        margin: "3% 0 30% 0",
 
-      },
-      "@media (min-width:600px) and (max-width:900px) and (orientation:portrait)": {
-        margin: "3% 0 20% 0",
-      },
-      "@media (min-width:901px) and (max-width:1030px)": {
-        margin: "3% 0 20% 0",
+    },
+    "@media (min-width:1031px)": {
+      margin: "3% 0 20% 0",
 
-      },
-      "@media (width:1024px) and (height:1366px)": {
-        margin: "3% 0 5% 0",
 
-      },
-      "@media (min-width:1031px)": {
-        margin: "3% 0 20% 0",
-
-  
-      }
+    }
   },
-  cards:{
+  cards: {
     height: "60vh",
     margin: "10% 0 0 0",
     "@media (max-width:568px) and (max-height:320px)": {
       height: "100vh",
       margin: "10% 0 0 0",
     },
+  },
+  articles: {
+    minHeight: '60vh',
+    margin: "5% 0% 5% 0%",
   },
   logos: {
     height: "50vh",
@@ -128,17 +123,22 @@ const useStyles = makeStyles({
       height: "13%",
     },
   },
+  borderTitle: {
+    borderLeft: "3px solid #cf1552",
+    paddingLeft: "3%",
+  },
 });
 
-export default function Home() {
+export default function Home({ articles }) {
   const classes = useStyles();
   const [currentInd, setCurrentInd] = useState(0);
- 
- 
+
+
   const nextSlide = () => {
     setCurrentInd((state) => (state + 1) % text.length);
   };
   useInterval(nextSlide, 4000);
+
 
   return (
     <Grid container>
@@ -156,7 +156,7 @@ export default function Home() {
         container
         spacing={3}
         justify="center"
-      className={classes.cards}
+        className={classes.cards}
       >
         <Grid
           item
@@ -198,30 +198,62 @@ export default function Home() {
       <Grid
         id="portfolio"
         item
-     className={classes.portfolio}
+        className={classes.portfolio}
       >
         <Portfolio />
       </Grid>
-
-      <Grid id="quemsomos" item className={classes.marginPresentation}>
-        <Presentation
-          title="Quem somos?"
-          photo={cameraPhoto}
-        />
+      <Grid container alignItems="center" className={classes.marginPresentation}>
+        <Grid id="quemsomos" item style={{ height: "90%" }}>
+          <Presentation
+            title="Quem somos?"
+            photo={cameraPhoto}
+          />
+        </Grid>
       </Grid>
-      <div className="section--orange"></div>
-      <Grid container style={{ overflow: "hidden" }}>
+      <Grid container justify="center" spacing={2} className={classes.articles}
+      >
+        <Grid
+          item xs={9}>
+          <Typography
+            variant="h4"
+            color="primary"
+            className={classes.borderTitle}
+          >
+            Blog Post
+        </Typography>
+        </Grid>
+        <Grid container spacing={4} justify='center' alignItems='center'  >
+
+          {articles.map(({ link, thumbnail, title }, index) =>
+            <Grid
+              item
+              xs={8}
+              sm={5}
+              lg={3}
+
+              key={index}
+            >
+              <ArticleCard
+                link={link}
+                thumbnail={thumbnail}
+                title={title}
+
+              />
+            </Grid>
+          )}
+        </Grid>
+
+      </Grid>
+      <Grid container alignItems="center" className={classes.marginPresentation}>
         <Grid
           id="quemescreve"
-          item
-          item className={classes.marginPresentation}
-          
+          style={{ height: "90%" }}
         >
           <PresentationQuemEscreve
             title="Quem faz?"
-            text="Ariane Gervásio é jornalista com pós-graduação em Marketing Digital e Relações Internacionais. Trabalhou na assessoria de comunicação da Prefeitura de Belo Horizonte e Câmera de Negócios Nigeria-Brazil. Durante 8 anos na TV UFMG, passou por diversas áreas dos setores de edição e redação. Também foi responsável pela criação do Centro de Documentação do canal, compartilhando esses conhecimentos em fóruns nacionais e internacionais.
-            Recentemente, foi responsável pelo setor de marketing e comunicação da Associação Brasileira de Preservação Audiovisual e de empresas belo-horizontinas como Samtek e Instituto Embelleze.
-            A Disruptiva é um sonho que se tornou realidade unindo MARKETING e VÍDEO, além de um grupo de roteiristas, cinegrafistas e editores parceiros."
+            text="Jornalista com pós-graduação em Marketing Digital e Relações Internacionais. Trabalhou na assessoria de comunicação da Prefeitura de Belo Horizonte e Câmera de Negócios Nigeria-Brazil. Durante 8 anos na TV UFMG, passou por diversas áreas dos setores de edição e redação. Também foi responsável pela criação do Centro de Documentação do canal, compartilhando esses conhecimentos em fóruns nacionais e internacionais.
+            Recentemente, foi responsável pelo setor de marketing e comunicação da Associação Brasileira de Preservação Audiovisual e de empresas belo-horizontinas como Samtek e Instituto Embelleze."
+
             photo={Ariane}
           />
         </Grid>
@@ -234,6 +266,6 @@ export default function Home() {
       <Grid container className={classes.footer}>
         <Footer />
       </Grid>
-    </Grid>
+    </Grid >
   );
 }

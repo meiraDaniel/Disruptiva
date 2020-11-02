@@ -14,7 +14,6 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 300,
     width: "100%",
     height: "10%",
-    display: "flex",
     alignItems: "center",
     justifyContent: "center",
     "@media (min-width:600px) and(orietation:landscape)": {
@@ -80,7 +79,7 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${
       theme.spacing(1) + 6
-    }px`,
+      }px`,
     cursor: "pointer",
   },
   imageMarked: {
@@ -124,9 +123,9 @@ export default function Portfolio() {
     setCurrentVideo(data.videos[0]);
   };
 
-   useEffect(() => {
+  useEffect(() => {
     getVideoInfos();
-  }, []); 
+  }, []);
 
   useEffect(() => {
     if (infoVideos && currentVideo) {
@@ -136,7 +135,7 @@ export default function Portfolio() {
 
       setPlaylistVideos(filteredVideos);
     }
-  }, [currentVideo]);
+  }, [currentVideo, infoVideos]);
 
   const handleSelectVideo = (data) => {
     setCurrentVideo(data);
@@ -184,10 +183,10 @@ export default function Portfolio() {
             <VideoPlayer video={currentVideo} />
           </Grid>
         ) : (
-          <Grid item xs={12} sm={6} style={{ display:"flex", justifyContent:"center", alignItems:"center" }}>
-          <Loading></Loading>
-          </Grid>
-        )}
+            <Grid item xs={12} sm={6} style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+              <Loading></Loading>
+            </Grid>
+          )}
       </Grid>
       <Grid className={classes.root} item xs={12}>
         <ButtonBase
